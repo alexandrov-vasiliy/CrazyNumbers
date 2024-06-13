@@ -96,9 +96,13 @@ public class GameManager : MonoBehaviour
 		}
 
 		var obstacleFromPool = ObstaclesPool.Get.GetRandomObject();
+		var renderer = obstacleFromPool.GetComponent<Obstacle>().Renderer;
 		
-		tempPos = new Vector2(Random.Range(0f - screenSize.x + obstacleFromPool.GetComponent<SpriteRenderer>().bounds.size.x, screenSize.x - obstacleFromPool.GetComponent<SpriteRenderer>().bounds.size.x), screenSize.y + obstacleFromPool.GetComponent<SpriteRenderer>().bounds.size.y);
+		tempPos = new Vector2(
+			Random.Range(0f - screenSize.x + renderer.bounds.size.x, screenSize.x - renderer.bounds.size.x), 
+			screenSize.y + renderer.bounds.size.y);
 		color = colorTable[Random.Range(0, colorTable.Length)];
+		
 		obstacleFromPool.GetComponent<Obstacle>().InitObstacle(tempPos, color);
 		obstacleFromPool.SetActive(true);
 		yield return new WaitForSecondsRealtime(currentTimeBetweenObstacles);

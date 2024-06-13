@@ -1,14 +1,14 @@
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-[RequireComponent(typeof(Text))]
+[RequireComponent(typeof(TextMeshPro))]
 public class PlayerForceView : MonoBehaviour
 {
-    private Text _playerForceText;
+    private TextMeshPro _playerForceText;
 
     private void Awake()
     {
-        _playerForceText = GetComponent<Text>();
+        _playerForceText = GetComponent<TextMeshPro>();
     }
 
     private void OnEnable()

@@ -1,17 +1,17 @@
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Obstacle : MonoBehaviour
 {
     public Color color;
-    public Text number;
+    public TextMeshPro number;
     public bool hit;
-
+    public SpriteRenderer Renderer;
     public int NumberForce = 1;
     
-    [SerializeField] private int _playerForceMultiplyerUp = 4;
+    [SerializeField] private int _playerForceMultiplyerUp = 2;
     [SerializeField] private int _playerForceOffserDown = 30;
     [SerializeField] private float _minGravityScale = 0.5f;
     [SerializeField] private float _maxGravityScale = 2.0f;
@@ -37,9 +37,9 @@ public class Obstacle : MonoBehaviour
         ChangeGravityScale();
         
         color = _color;
-        GetComponent<SpriteRenderer>().color = _color;
+       Renderer.color = _color;
         int playerForce = ScoreManager.Instance.PlayerForce;
-        if (playerForce <= 4)
+        if (playerForce <= 3)
         {
             NumberForce = 1;
         }
