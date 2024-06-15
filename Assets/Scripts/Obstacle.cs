@@ -11,6 +11,9 @@ public class Obstacle : MonoBehaviour
     public SpriteRenderer Renderer;
     public int NumberForce = 1;
     
+    [SerializeField] private Color ApplyColor;
+    [SerializeField] private Color DangerColor;
+
     [SerializeField] private int _playerForceMultiplyerUp = 2;
     [SerializeField] private int _playerForceOffserDown = 30;
     [SerializeField] private float _minGravityScale = 0.5f;
@@ -32,13 +35,12 @@ public class Obstacle : MonoBehaviour
         }
     }
 
-    public void InitObstacle(Vector2 _position, Color _color)
+    public void InitObstacle(Vector2 _position)
     {
         ChangeGravityScale();
         
-        color = _color;
-       Renderer.color = _color;
         int playerForce = ScoreManager.Instance.PlayerForce;
+     
         if (playerForce <= 3)
         {
             NumberForce = 1;
@@ -52,6 +54,9 @@ public class Obstacle : MonoBehaviour
             NumberForce = Random.Range(playerForce - _playerForceOffserDown, playerForce * _playerForceMultiplyerUp);
         }
 
+        color = playerForce >= NumberForce ? ApplyColor : DangerColor;
+        Renderer.color = color;
+        
         number.text = NumberForce.ToString();
         transform.position = _position;
     }

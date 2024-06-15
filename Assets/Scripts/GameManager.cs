@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 	[Space(5f)]
 	public Color[] colorTable;
 
+
+
 	[Space(5f)]
 	public float minTimeBetweenObstacles = 0.5f;
 
@@ -101,9 +103,8 @@ public class GameManager : MonoBehaviour
 		tempPos = new Vector2(
 			Random.Range(0f - screenSize.x + renderer.bounds.size.x, screenSize.x - renderer.bounds.size.x), 
 			screenSize.y + renderer.bounds.size.y);
-		color = colorTable[Random.Range(0, colorTable.Length)];
 		
-		obstacleFromPool.GetComponent<Obstacle>().InitObstacle(tempPos, color);
+		obstacleFromPool.GetComponent<Obstacle>().InitObstacle(tempPos);
 		obstacleFromPool.SetActive(true);
 		yield return new WaitForSecondsRealtime(currentTimeBetweenObstacles);
 		StartCoroutine(SpawnObstacle());
@@ -125,7 +126,7 @@ public class GameManager : MonoBehaviour
 		GameObject[] array = GameObject.FindGameObjectsWithTag("Obstacle");
 		foreach (var t in array)
 		{
-			Destroy(t);
+			t.SetActive(false);
 		}
 		player.transform.position = new Vector2(0f, -2.5f);
 		color = colorTable[Random.Range(0, colorTable.Length)];

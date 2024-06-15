@@ -35,9 +35,9 @@ public class AudioManager : MonoBehaviour
 		}
 		else if (Instance != this)
 		{
-			UnityEngine.Object.Destroy(base.gameObject);
+			Destroy(gameObject);
 		}
-		Object.DontDestroyOnLoad(base.gameObject);
+		DontDestroyOnLoad(gameObject);
 	}
 
 	private void Start()

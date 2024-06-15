@@ -199,6 +199,8 @@ MonoBehaviour:
   hit: 0
   Renderer: {fileID: 8519501785274604556}
   NumberForce: 1
+  ApplyColor: {r: 0.17428304, g: 0.735849, b: 0.1492524, a: 1}
+  DangerColor: {r: 0.6981132, g: 0.11525452, b: 0.11525452, a: 1}
   _playerForceMultiplyerUp: 4
   _playerForceOffserDown: 30
   _minGravityScale: 0.5
@@ -313,8 +315,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281152820
-  m_fontColor: {r: 0.20564678, g: 0.20754719, b: 0.17524031, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
