@@ -1,12 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 public class GameManager : MonoBehaviour
 {
 	public UIManager uIManager;
 
-	public ScoreManager scoreManager;
+	[FormerlySerializedAs("scoreManager")] public PlayerForce playerForce;
 
 	[Space(5f)]
 	public Player player;
@@ -40,11 +41,13 @@ public class GameManager : MonoBehaviour
 	private Color color;
 
 	private AudioManager _audioManager;
+	private PlayerForce _playerForce;
 
 	[Inject]
-	public void Construct(AudioManager audioManager)
+	public void Construct(AudioManager audioManager, PlayerForce playerForce)
 	{
 		_audioManager = audioManager;
+		_playerForce = playerForce;
 	}
 	
 
@@ -81,7 +84,6 @@ public class GameManager : MonoBehaviour
 		if (uIManager.gameState == GameState.PLAYING && Input.GetMouseButton(0) && !uIManager.IsButton() && !spawning)
 		{
 			spawning = true;
-			ScoreManager.Instance.StartCounting();
 			InitVariables();
 			StartCoroutine(SpawnObstacle());
 		}
@@ -94,15 +96,17 @@ public class GameManager : MonoBehaviour
 
 	private IEnumerator SpawnObstacle()
 	{
-		if (ScoreManager.Instance.currentScore > 50f)
+		if (uIManager.gameState == GameState.PAUSED) yield return new WaitUntil(() => uIManager.gameState == GameState.PLAYING);
+		
+		if (_playerForce.Value > 50f)
 		{
 			currentTimeBetweenObstacles = minTimeBetweenObstacles;
 		}
-		else if (ScoreManager.Instance.currentScore > 35f)
+		else if (_playerForce.Value  > 35f)
 		{
 			currentTimeBetweenObstacles = startTimeBetweenObstacles - 0.25f;
 		}
-		else if (ScoreManager.Instance.currentScore > 15f)
+		else if (_playerForce.Value  > 15f)
 		{
 			currentTimeBetweenObstacles = startTimeBetweenObstacles - 0.15f;
 		}
@@ -128,7 +132,7 @@ public class GameManager : MonoBehaviour
 		}
 		uIManager.ShowGameplay();
 		ClearScene();
-		scoreManager.ResetCurrentScore();
+		playerForce.ResetCurrentScore();
 	}
 
 	public void ClearScene()
@@ -153,10 +157,9 @@ public class GameManager : MonoBehaviour
 			
 			StopAllCoroutines();
 			spawning = false;
-			ScoreManager.Instance.StopCounting();
 			_audioManager.PlayEffects(_audioManager.gameOver);
 			uIManager.ShowGameOver();
-			scoreManager.UpdateScoreGameover();
+			playerForce.UpdateScoreGameover();
 		}
 	}
 }

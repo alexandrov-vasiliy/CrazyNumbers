@@ -20,11 +20,13 @@ public class UIManager : MonoBehaviour
 	private bool clicked;
 
 	private AudioManager _audioManager;
+	private PlayerForce _playerForce;
 
 	[Inject]
-	public void Construct(AudioManager audioManager)
+	public void Construct(AudioManager audioManager, PlayerForce playerForce)
 	{
 		_audioManager = audioManager;
+		_playerForce = playerForce;
 	}
 
 	private void Start()
@@ -54,8 +56,7 @@ public class UIManager : MonoBehaviour
 
 	public void ShowMainMenu()
 	{
-		ScoreManager.Instance.StopCounting();
-		ScoreManager.Instance.ResetCurrentScore();
+		_playerForce.ResetCurrentScore();
 		clicked = true;
 		mainMenuGui.SetActive(value: true);
 		pauseGui.SetActive(value: false);

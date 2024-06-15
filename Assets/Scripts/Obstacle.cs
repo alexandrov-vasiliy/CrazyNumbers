@@ -1,5 +1,7 @@
+using System;
 using TMPro;
 using UnityEngine;
+using Zenject;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -22,6 +24,18 @@ public class Obstacle : MonoBehaviour
     [SerializeField] private int _maxPlayerForce = 100;
 
     private Rigidbody2D _rb;
+    [Inject] private PlayerForce _playerForce;
+
+    private void OnEnable()
+    {
+        _playerForce.OnPlayerForceUpdate += ChangeColorFromPlayerForce;
+    }
+
+    private void OnDisable()
+    {
+        _playerForce.OnPlayerForceUpdate -= ChangeColorFromPlayerForce;
+    }
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -38,24 +52,23 @@ public class Obstacle : MonoBehaviour
     public void InitObstacle(Vector2 _position)
     {
         ChangeGravityScale();
-        
-        int playerForce = ScoreManager.Instance.PlayerForce;
+
+        int playerForceValue = _playerForce.Value;
      
-        if (playerForce <= 3)
+        if (playerForceValue <= 3)
         {
             NumberForce = 1;
         }
-        else if (playerForce <= _playerForceOffserDown)
+        else if (playerForceValue <= _playerForceOffserDown)
         {
-            NumberForce = Random.Range(1, playerForce * _playerForceMultiplyerUp);
+            NumberForce = Random.Range(1, playerForceValue * _playerForceMultiplyerUp);
         }
         else
         {
-            NumberForce = Random.Range(playerForce - _playerForceOffserDown, playerForce * _playerForceMultiplyerUp);
+            NumberForce = Random.Range(playerForceValue - _playerForceOffserDown, playerForceValue * _playerForceMultiplyerUp);
         }
 
-        color = playerForce >= NumberForce ? ApplyColor : DangerColor;
-        Renderer.color = color;
+        ChangeColorFromPlayerForce(playerForceValue);
         
         number.text = NumberForce.ToString();
         transform.position = _position;
@@ -63,12 +76,18 @@ public class Obstacle : MonoBehaviour
 
     private void ChangeGravityScale()
     {
-        int playerForce = ScoreManager.Instance.PlayerForce;
+        int playerForce = _playerForce.Value;
         
         playerForce = Mathf.Clamp(playerForce, _minPlayerForce, _maxPlayerForce);
 
         // Масштабируем gravityScale между minGravityScale и maxGravityScale
         _rb.gravityScale = _minGravityScale + (_maxGravityScale - _minGravityScale) *
             ((float)playerForce - _minPlayerForce) / (_maxPlayerForce - _minPlayerForce);
+    }
+
+    private void ChangeColorFromPlayerForce(int playerForce)
+    {
+        color = playerForce >= NumberForce ? ApplyColor : DangerColor;
+        Renderer.color = color;
     }
 }

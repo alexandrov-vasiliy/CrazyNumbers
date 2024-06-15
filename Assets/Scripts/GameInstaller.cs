@@ -6,5 +6,6 @@ public class GameInstaller : MonoInstaller
     public override void InstallBindings()
     {
         Container.Bind<AudioManager>().FromComponentInHierarchy().AsSingle().NonLazy();
+        Container.Bind<PlayerForce>().FromComponentInHierarchy().AsSingle().NonLazy();
     }
 }

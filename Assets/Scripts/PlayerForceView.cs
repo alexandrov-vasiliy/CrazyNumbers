@@ -1,10 +1,13 @@
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 [RequireComponent(typeof(TextMeshPro))]
 public class PlayerForceView : MonoBehaviour
 {
     private TextMeshPro _playerForceText;
+
+    [Inject] private PlayerForce _playerForce;
 
     private void Awake()
     {
@@ -13,12 +16,12 @@ public class PlayerForceView : MonoBehaviour
 
     private void OnEnable()
     {
-        ScoreManager.Instance.OnPlayerForceUpdate += UpdatePlayerForce;
+        _playerForce.OnPlayerForceUpdate += UpdatePlayerForce;
     }
 
     private void OnDisable()
     {
-        ScoreManager.Instance.OnPlayerForceUpdate -= UpdatePlayerForce;
+        _playerForce.OnPlayerForceUpdate -= UpdatePlayerForce;
     }
 
     private void UpdatePlayerForce(int playerForce)

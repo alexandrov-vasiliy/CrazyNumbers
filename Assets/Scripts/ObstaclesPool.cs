@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 using Random = UnityEngine.Random;
 
 public class ObstaclesPool : MonoBehaviour
@@ -11,6 +12,8 @@ public class ObstaclesPool : MonoBehaviour
     [SerializeField, ReadOnly] private List<GameObject> _pool = new List<GameObject>();
     [SerializeField, ReadOnly] private List<GameObject> _usingObjects = new List<GameObject>();
 
+    [Inject]
+    DiContainer _container;
 
     private void Filling()
     {
@@ -26,8 +29,8 @@ public class ObstaclesPool : MonoBehaviour
         for (int i = 0; i < _usingObjects.Count; i++)
         {
             if(_usingObjects[i] == null) continue;
-            
-            tmp = Instantiate(_usingObjects[i]);
+
+            tmp = _container.InstantiatePrefab(_usingObjects[i]);
             tmp.SetActive(false);
             _pool.Add(tmp);
         }

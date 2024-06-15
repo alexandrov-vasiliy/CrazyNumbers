@@ -22,11 +22,13 @@ public class Player : MonoBehaviour
     private bool follow;
 
     private AudioManager _audioManager;
+    private PlayerForce _playerForce;
 
     [Inject]
-    public void Construct(AudioManager audioManager)
+    public void Construct(AudioManager audioManager, PlayerForce playerForce)
     {
         _audioManager = audioManager;
+        _playerForce = playerForce;
     }
 
 
@@ -40,7 +42,7 @@ public class Player : MonoBehaviour
 
         int colidedNumber = collision.gameObject.GetComponent<Obstacle>().NumberForce;
 
-        if (colidedNumber <= ScoreManager.Instance.PlayerForce)
+        if (colidedNumber <= _playerForce.Value)
         {
             DOTween.Sequence()
                 .Append(transform.DOScale(transform.localScale * scaleMultiply, animationDuration))
@@ -48,7 +50,7 @@ public class Player : MonoBehaviour
             
             _audioManager.PlayEffects(_audioManager.sameColor);
             collision.gameObject.SetActive(false);
-            ScoreManager.Instance.IncrementPlayerForce(colidedNumber);
+            _playerForce.IncrementPlayerForce(colidedNumber);
         }
         else
         {
