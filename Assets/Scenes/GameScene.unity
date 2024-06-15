@@ -261,6 +261,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270678127}
   m_CullTransparentMesh: 1
+--- !u!1 &793030847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 793030849}
+  - component: {fileID: 793030848}
+  m_Layer: 0
+  m_Name: PlayerEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &793030848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793030847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c49aa4fb85495bb13596bdd968431b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &793030849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793030847}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6983104, y: 1.10106, z: -10.276236}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &969369195
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,6 +675,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1477260502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1477260504}
+  - component: {fileID: 1477260503}
+  m_Layer: 0
+  m_Name: ObstacleSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1477260503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477260502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e411004181454987984e1f078c2ec3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelConfig: {fileID: 11400000, guid: f861c9d439aa7463f8ae6cd1addb43ee, type: 2}
+--- !u!4 &1477260504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477260502}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6983104, y: 1.10106, z: -10.276236}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1499372250
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,7 +729,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1499372252}
-  - component: {fileID: 1499372251}
+  - component: {fileID: 1499372253}
+  - component: {fileID: 1499372254}
+  - component: {fileID: 1499372255}
   m_Layer: 0
   m_Name: ObstaclesPool
   m_TagString: Untagged
@@ -648,23 +739,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1499372251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499372250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8cb7dc3de53d412c8b2994831a43242, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objects:
-  - {fileID: 1790602294077451984, guid: 540cf68e145a44dcb8e07d1a32c8ea9b, type: 3}
-  _count: 8
-  _pool: []
-  _usingObjects: []
 --- !u!4 &1499372252
 Transform:
   m_ObjectHideFlags: 0
@@ -680,6 +754,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1499372253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499372250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a366cfa2925415b9186fe719cf0d511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objects:
+  - {fileID: 1790602294077451984, guid: 540cf68e145a44dcb8e07d1a32c8ea9b, type: 3}
+  _count: 5
+  _pool: []
+  _usingObjects: []
+--- !u!114 &1499372254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499372250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958e61ae10354f4c9aab0818bfae94f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objects:
+  - {fileID: 1790602294077451984, guid: aafdd63b1cb6649e681375ee261fd046, type: 3}
+  _count: 5
+  _pool: []
+  _usingObjects: []
+--- !u!114 &1499372255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499372250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad747e89902c480eb2d9972e0f112385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objects:
+  - {fileID: 1790602294077451984, guid: bce890af040114352a20ee3f7b746249, type: 3}
+  _count: 5
+  _pool: []
+  _usingObjects: []
 --- !u!1 &1545935935
 GameObject:
   m_ObjectHideFlags: 0
@@ -3492,14 +3617,11 @@ MonoBehaviour:
   colorTable:
   - {r: 1, g: 0.3686275, b: 0.3568628, a: 1}
   - {r: 0.1662958, g: 0.9528302, b: 0.4839941, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.78431374, g: 0.29411766, b: 0.5529412, a: 1}
   - {r: 1, g: 0.8235294, b: 0, a: 1}
   - {r: 0.3508811, g: 0.8962264, b: 0.8283167, a: 1}
+  - {r: 0.78431374, g: 0.29411766, b: 0.5529412, a: 1}
   - {r: 1, g: 0.4738788, b: 0, a: 1}
   - {r: 0, g: 0.6348052, b: 1, a: 1}
-  minTimeBetweenObstacles: 0.4
-  startTimeBetweenObstacles: 0.75
 --- !u!114 &1790602295973277515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4489,3 +4611,5 @@ SceneRoots:
   - {fileID: 1499372252}
   - {fileID: 1415350096}
   - {fileID: 1545935938}
+  - {fileID: 793030849}
+  - {fileID: 1477260504}

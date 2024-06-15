@@ -47,9 +47,21 @@ public class PlayerForce : MonoBehaviour
 		ResetPlayerForce();
 	}
 
-	public void IncrementPlayerForce(int number)
+	public void IncrementPlayerForce(float number)
 	{
-		_value += number;
+		_value +=(int)number;
+		OnPlayerForceUpdate?.Invoke(_value);
+	}
+
+	public void MultiplyPlayerForce(float number)
+	{
+		_value = (int)(_value * number);
+		OnPlayerForceUpdate?.Invoke(_value);
+	}
+	
+	public void DividePlayerForce(float number)
+	{
+		_value = (int)(_value / number);
 		OnPlayerForceUpdate?.Invoke(_value);
 	}
 

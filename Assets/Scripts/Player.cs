@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -8,12 +9,14 @@ public class Player : MonoBehaviour
     public float followSpeed = 2f;
 
     public float offsetY = 0.8f;
-    
+
     public SpriteRenderer Renderer;
 
 
     [SerializeField, Range(0f, 1f)] private float animationDuration = 0.2f;
-    [FormerlySerializedAs("scaleMultiplyer")] [SerializeField] private float scaleMultiply = 1.2f;
+
+    [FormerlySerializedAs("scaleMultiplyer")] [SerializeField]
+    private float scaleMultiply = 1.2f;
 
     private Vector2 destination;
 
@@ -23,39 +26,57 @@ public class Player : MonoBehaviour
 
     private AudioManager _audioManager;
     private PlayerForce _playerForce;
+    private PlayerEvents _playerEvents;
+    private UIManager _uiManager;
 
     [Inject]
-    public void Construct(AudioManager audioManager, PlayerForce playerForce)
+    public void Construct(AudioManager audioManager, PlayerForce playerForce, PlayerEvents playerEvents, UIManager uiManager)
     {
         _audioManager = audioManager;
         _playerForce = playerForce;
+        _playerEvents = playerEvents;
+        _uiManager = uiManager;
     }
 
+    private void OnEnable()
+    {
+        _playerEvents.OnPlayerDead += GameOver;
+        _playerEvents.OnPlayerApplyObstacle += ApplyObstacle;
+    }
+
+    private void OnDisable()
+    {
+        _playerEvents.OnPlayerDead -= GameOver;
+        _playerEvents.OnPlayerApplyObstacle -= ApplyObstacle;
+    }
+
+    private void ApplyObstacle()
+    {
+        DOTween.Sequence()
+            .Append(transform.DOScale(transform.localScale * scaleMultiply, animationDuration))
+            .Append(transform.DOScale(new Vector3(1f, 1f, 1f), animationDuration));
+
+        _audioManager.PlayEffects(_audioManager.sameColor);
+    }
+
+    private void GameOver()
+    {
+        _audioManager.PlayEffects(_audioManager.wrongColor);
+        GameManager.Instance.GameOver();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (GameManager.Instance.uIManager.gameState != GameState.PLAYING ||
-            !collision.gameObject.CompareTag("Obstacle"))
+        if (_uiManager.gameState != GameState.PLAYING)
         {
             return;
         }
 
-        int colidedNumber = collision.gameObject.GetComponent<Obstacle>().NumberForce;
+        IInteractable interactable = collision.gameObject.GetComponent<IInteractable>();
 
-        if (colidedNumber <= _playerForce.Value)
+        if (interactable != null)
         {
-            DOTween.Sequence()
-                .Append(transform.DOScale(transform.localScale * scaleMultiply, animationDuration))
-                .Append(transform.DOScale(new Vector3(1f, 1f, 1f), animationDuration));
-            
-            _audioManager.PlayEffects(_audioManager.sameColor);
-            collision.gameObject.SetActive(false);
-            _playerForce.IncrementPlayerForce(colidedNumber);
-        }
-        else
-        {
-            _audioManager.PlayEffects(_audioManager.wrongColor);
-            GameManager.Instance.GameOver();
+            interactable.Interact();
         }
     }
 
@@ -72,7 +93,7 @@ public class Player : MonoBehaviour
             follow = true;
         }
 
-        if (GameManager.Instance.uIManager.gameState == GameState.PLAYING && !GameManager.Instance.uIManager.IsButton())
+        if (_uiManager.gameState == GameState.PLAYING && !_uiManager.IsButton())
         {
             if (Input.GetMouseButton(0) && follow)
             {

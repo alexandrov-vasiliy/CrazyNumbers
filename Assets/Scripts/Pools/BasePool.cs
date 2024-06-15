@@ -3,9 +3,8 @@ using UnityEngine;
 using Zenject;
 using Random = UnityEngine.Random;
 
-public class ObstaclesPool : MonoBehaviour
+public class BasePool : MonoBehaviour
 {
-    public static ObstaclesPool Get;
     
     [SerializeField] private GameObject[] _objects;
     [SerializeField] private int _count;
@@ -39,7 +38,6 @@ public class ObstaclesPool : MonoBehaviour
 
     protected void Awake()
     {
-        Get = this;
         Filling();
         InstantiatePool();
     }
