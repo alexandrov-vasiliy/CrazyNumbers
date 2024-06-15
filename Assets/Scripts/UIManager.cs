@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Zenject;
 
 public class UIManager : MonoBehaviour
 {
@@ -18,6 +19,14 @@ public class UIManager : MonoBehaviour
 
 	private bool clicked;
 
+	private AudioManager _audioManager;
+
+	[Inject]
+	public void Construct(AudioManager audioManager)
+	{
+		_audioManager = audioManager;
+	}
+
 	private void Start()
 	{
 		mainMenuGui.SetActive(value: true);
@@ -33,7 +42,7 @@ public class UIManager : MonoBehaviour
 		{
 			if (!IsButton())
 			{
-				AudioManager.Instance.PlayEffects(AudioManager.Instance.buttonClick);
+				_audioManager.PlayEffects(_audioManager.buttonClick);
 				ShowGameplay();
 			}
 		}
@@ -57,7 +66,7 @@ public class UIManager : MonoBehaviour
 			Time.timeScale = 1f;
 		}
 		gameState = GameState.MENU;
-		AudioManager.Instance.PlayEffects(AudioManager.Instance.buttonClick);
+		_audioManager.PlayEffects(_audioManager.buttonClick);
 		GameManager.Instance.ClearScene();
 	}
 
@@ -68,7 +77,7 @@ public class UIManager : MonoBehaviour
 			pauseGui.SetActive(value: true);
 			Time.timeScale = 0f;
 			gameState = GameState.PAUSED;
-			AudioManager.Instance.PlayEffects(AudioManager.Instance.buttonClick);
+			_audioManager.PlayEffects(_audioManager.buttonClick);
 		}
 	}
 
@@ -77,7 +86,7 @@ public class UIManager : MonoBehaviour
 		pauseGui.SetActive(value: false);
 		Time.timeScale = 1f;
 		gameState = GameState.PLAYING;
-		AudioManager.Instance.PlayEffects(AudioManager.Instance.buttonClick);
+		_audioManager.PlayEffects(_audioManager.buttonClick);
 	}
 
 	public void ShowGameplay()
@@ -87,8 +96,8 @@ public class UIManager : MonoBehaviour
 		gameplayGui.SetActive(value: true);
 		gameOverGui.SetActive(value: false);
 		gameState = GameState.PLAYING;
-		AudioManager.Instance.PlayEffects(AudioManager.Instance.buttonClick);
-		AudioManager.Instance.PlayMusic(AudioManager.Instance.gameMusic);
+		_audioManager.PlayEffects(_audioManager.buttonClick);
+		_audioManager.PlayMusic(_audioManager.gameMusic);
 	}
 
 	public void ShowGameOver()
@@ -98,7 +107,7 @@ public class UIManager : MonoBehaviour
 		gameplayGui.SetActive(value: false);
 		gameOverGui.SetActive(value: true);
 		gameState = GameState.GAMEOVER;
-		AudioManager.Instance.PlayMusic(AudioManager.Instance.menuMusic);
+		_audioManager.PlayMusic(_audioManager.menuMusic);
 	}
 
 	public bool IsButton()

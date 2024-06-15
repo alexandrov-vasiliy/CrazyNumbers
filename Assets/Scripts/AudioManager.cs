@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-	public static AudioManager Instance;
-
 	[Header("Audio Sources")]
 	public AudioSource efxSource;
 
@@ -26,20 +24,8 @@ public class AudioManager : MonoBehaviour
 	private bool muteMusic;
 
 	private bool muteEfx;
-
-	private void Awake()
-	{
-		if (Instance == null)
-		{
-			Instance = this;
-		}
-		else if (Instance != this)
-		{
-			Destroy(gameObject);
-		}
-		DontDestroyOnLoad(gameObject);
-	}
-
+	
+	
 	private void Start()
 	{
 		muteMusic = ((PlayerPrefs.GetInt("MuteMusic") == 1) ? true : false);

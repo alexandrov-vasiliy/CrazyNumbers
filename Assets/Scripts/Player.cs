@@ -1,6 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Zenject;
 
 public class Player : MonoBehaviour
 {
@@ -20,6 +21,14 @@ public class Player : MonoBehaviour
 
     private bool follow;
 
+    private AudioManager _audioManager;
+
+    [Inject]
+    public void Construct(AudioManager audioManager)
+    {
+        _audioManager = audioManager;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -37,13 +46,13 @@ public class Player : MonoBehaviour
                 .Append(transform.DOScale(transform.localScale * scaleMultiply, animationDuration))
                 .Append(transform.DOScale(new Vector3(1f, 1f, 1f), animationDuration));
             
-            AudioManager.Instance.PlayEffects(AudioManager.Instance.sameColor);
+            _audioManager.PlayEffects(_audioManager.sameColor);
             collision.gameObject.SetActive(false);
             ScoreManager.Instance.IncrementPlayerForce(colidedNumber);
         }
         else
         {
-            AudioManager.Instance.PlayEffects(AudioManager.Instance.wrongColor);
+            _audioManager.PlayEffects(_audioManager.wrongColor);
             GameManager.Instance.GameOver();
         }
     }

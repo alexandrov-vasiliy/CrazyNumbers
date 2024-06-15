@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public class AudioButton : MonoBehaviour
 {
@@ -15,6 +16,14 @@ public class AudioButton : MonoBehaviour
 
 	public Image spriteButton;
 
+	private AudioManager _audioManager;
+
+	[Inject]
+	public void Constructor(AudioManager audioManager)
+	{
+		_audioManager = audioManager;
+	}
+
 	private void Start()
 	{
 		SetButton();
@@ -22,21 +31,21 @@ public class AudioButton : MonoBehaviour
 
 	public void MusicButtonClicked()
 	{
-		AudioManager.Instance.MuteMusic();
-		AudioManager.Instance.PlayEffects(AudioManager.Instance.buttonClick);
+		_audioManager.MuteMusic();
+		_audioManager.PlayEffects(_audioManager.buttonClick);
 		SetButton();
 	}
 
 	public void EfxButtonClicked()
 	{
-		AudioManager.Instance.MuteEfx();
-		AudioManager.Instance.PlayEffects(AudioManager.Instance.buttonClick);
+		_audioManager.MuteEfx();
+		_audioManager.PlayEffects(_audioManager.buttonClick);
 		SetButton();
 	}
 
 	private void SetButton()
 	{
-		if ((!AudioManager.Instance.IsMusicMute() && !efx) || (!AudioManager.Instance.IsEfxMute() && efx))
+		if ((!_audioManager.IsMusicMute() && !efx) || (!_audioManager.IsEfxMute() && efx))
 		{
 			if (efx)
 			{

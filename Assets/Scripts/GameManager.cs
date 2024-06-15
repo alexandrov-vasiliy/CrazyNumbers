@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using Zenject;
 
 public class GameManager : MonoBehaviour
 {
@@ -37,6 +38,15 @@ public class GameManager : MonoBehaviour
 	private Vector3 screenSize;
 
 	private Color color;
+
+	private AudioManager _audioManager;
+
+	[Inject]
+	public void Construct(AudioManager audioManager)
+	{
+		_audioManager = audioManager;
+	}
+	
 
 	public static GameManager Instance
 	{
@@ -144,7 +154,7 @@ public class GameManager : MonoBehaviour
 			StopAllCoroutines();
 			spawning = false;
 			ScoreManager.Instance.StopCounting();
-			AudioManager.Instance.PlayEffects(AudioManager.Instance.gameOver);
+			_audioManager.PlayEffects(_audioManager.gameOver);
 			uIManager.ShowGameOver();
 			scoreManager.UpdateScoreGameover();
 		}
