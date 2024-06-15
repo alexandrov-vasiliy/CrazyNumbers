@@ -196,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 1790602294899535570}
   NumberForce: 1
+  spriteRenderer: {fileID: 8519501785274604556}
   number: {fileID: 9129380530361166794}
 --- !u!1 &1835214109475658652
 GameObject:

@@ -194,19 +194,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa40c0dc9b9b6b3c170ed445c99f4984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rb: {fileID: 1790602294899535570}
+  NumberForce: 1
+  spriteRenderer: {fileID: 8519501785274604556}
   color: {r: 0, g: 0, b: 0, a: 0}
   number: {fileID: 9129380530361166794}
-  hit: 0
   Renderer: {fileID: 8519501785274604556}
-  NumberForce: 1
   ApplyColor: {r: 0.17428304, g: 0.735849, b: 0.1492524, a: 1}
   DangerColor: {r: 0.6981132, g: 0.11525452, b: 0.11525452, a: 1}
-  _playerForceMultiplyerUp: 4
-  _playerForceOffserDown: 30
-  _minGravityScale: 0.5
-  _maxGravityScale: 2
-  _minPlayerForce: 0
-  _maxPlayerForce: 100
 --- !u!1 &1835214109475658652
 GameObject:
   m_ObjectHideFlags: 0

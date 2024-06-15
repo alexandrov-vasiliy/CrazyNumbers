@@ -6,6 +6,7 @@ public class BaseObstacle : MonoBehaviour
 {
     [SerializeField] protected Rigidbody2D _rb;
     public float NumberForce = 1f;
+    public SpriteRenderer spriteRenderer;
     [Inject] protected PlayerForce _playerForce;
     [Inject] protected PlayerEvents _playerEvents;
     

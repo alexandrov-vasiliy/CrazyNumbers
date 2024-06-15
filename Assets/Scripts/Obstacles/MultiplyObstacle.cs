@@ -9,7 +9,7 @@ public class MultiplyObstacle : BaseObstacle, IInteractable
     {
         base.InitObstacle(position, force, gravityScale);
 
-        number.text = $"*{NumberForce}";
+        number.text = $"* {NumberForce}";
         transform.position = position;
     }
 

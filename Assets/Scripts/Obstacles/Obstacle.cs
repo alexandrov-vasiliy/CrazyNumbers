@@ -4,12 +4,10 @@ using UnityEngine;
 using Zenject;
 
 
-public class Obstacle : BaseObstacle
+public class Obstacle : BaseObstacle, IInteractable
 {
     public Color color;
     public TextMeshPro number;
-    public SpriteRenderer Renderer;
-    
 
     [SerializeField] private Color ApplyColor;
     [SerializeField] private Color DangerColor;
@@ -38,7 +36,7 @@ public class Obstacle : BaseObstacle
     private void ChangeColorFromPlayerForce(int playerForce)
     {
         color = playerForce >= NumberForce ? ApplyColor : DangerColor;
-        Renderer.color = color;
+        spriteRenderer.color = color;
     }
 
     public void Interact()
