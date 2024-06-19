@@ -97,8 +97,22 @@ public class Player : MonoBehaviour
         {
             if (Input.GetMouseButton(0) && follow)
             {
-                destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector3 destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 destination = new Vector2(destination.x, destination.y + offsetY);
+
+                // Получаем границы камеры в мировых единицах
+                float minX = Camera.main.ViewportToWorldPoint(new Vector2(0, 0)).x;
+                float maxX = Camera.main.ViewportToWorldPoint(new Vector2(1, 0)).x;
+                float minY = Camera.main.ViewportToWorldPoint(new Vector2(0, 0)).y;
+                float maxY = Camera.main.ViewportToWorldPoint(new Vector2(0, 1)).y;
+
+                // Ограничиваем destination, чтобы игрок не выходил за пределы экрана
+                float clampedX = Mathf.Clamp(destination.x, minX, maxX);
+                float clampedY = Mathf.Clamp(destination.y, minY, maxY);
+
+                // Используем ограниченные координаты для назначения следования
+                destination = new Vector2(clampedX, clampedY);
+
                 transform.position = Vector2.Lerp(base.transform.position, destination, followSpeed * Time.deltaTime);
             }
 

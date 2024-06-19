@@ -15,6 +15,8 @@ public class PoolObjectFactory : IObjectFactory
                 return MultiplyPool.Get.GetRandomObject();
             case InteractableType.Divider:
                 return DividerPool.Get.GetRandomObject();
+            case InteractableType.Boss:
+                return BossPool.Get.GetRandomObject();
             default:
                 return null;
         }

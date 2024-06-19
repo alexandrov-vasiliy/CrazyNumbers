@@ -379,7 +379,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d13ec8a27b3b4f64963d1ca428272fac, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8584906, g: 0.26321647, b: 0.26321647, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -732,6 +732,7 @@ GameObject:
   - component: {fileID: 1499372253}
   - component: {fileID: 1499372254}
   - component: {fileID: 1499372255}
+  - component: {fileID: 1499372256}
   m_Layer: 0
   m_Name: ObstaclesPool
   m_TagString: Untagged
@@ -768,7 +769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objects:
   - {fileID: 1790602294077451984, guid: 540cf68e145a44dcb8e07d1a32c8ea9b, type: 3}
-  _count: 5
+  _count: 4
   _pool: []
   _usingObjects: []
 --- !u!114 &1499372254
@@ -785,7 +786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objects:
   - {fileID: 1790602294077451984, guid: aafdd63b1cb6649e681375ee261fd046, type: 3}
-  _count: 5
+  _count: 3
   _pool: []
   _usingObjects: []
 --- !u!114 &1499372255
@@ -802,7 +803,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objects:
   - {fileID: 1790602294077451984, guid: bce890af040114352a20ee3f7b746249, type: 3}
-  _count: 5
+  _count: 3
+  _pool: []
+  _usingObjects: []
+--- !u!114 &1499372256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499372250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917c1a44b16b4ef6b6e76b997338f9e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objects:
+  - {fileID: 1790602294077451984, guid: 7b02dc52ef5884e2383ae452854f1773, type: 3}
+  _count: 2
   _pool: []
   _usingObjects: []
 --- !u!1 &1545935935
@@ -3610,7 +3628,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf8f827e426ef79d06e447842f993ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uIManager: {fileID: 1790602295973277490}
   playerForce: {fileID: 1790602295973277505}
   player: {fileID: 1790602295671287537}
   trailMaterial: {fileID: 2100000, guid: cdc8a270d25b949158e270461b9687b6, type: 2}

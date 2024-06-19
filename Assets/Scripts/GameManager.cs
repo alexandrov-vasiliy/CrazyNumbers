@@ -32,12 +32,14 @@ public class GameManager : MonoBehaviour
 	private AudioManager _audioManager;
 	private PlayerForce _playerForce;
 	private UIManager _uIManager;
+	private ObstacleSpawner _obstacleSpawner;
 	[Inject]
-	public void Construct(AudioManager audioManager, PlayerForce playerForce, UIManager uiManager)
+	public void Construct(AudioManager audioManager, PlayerForce playerForce, UIManager uiManager, ObstacleSpawner obstacleSpawner)
 	{
 		_audioManager = audioManager;
 		_playerForce = playerForce;
 		_uIManager = uiManager;
+		_obstacleSpawner = obstacleSpawner;
 	}
 	
 
@@ -77,6 +79,7 @@ public class GameManager : MonoBehaviour
 		_uIManager.ShowGameplay();
 		ClearScene();
 		playerForce.ResetCurrentScore();
+		_obstacleSpawner.StartSpawn();
 	}
 
 	public void ClearScene()

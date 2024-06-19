@@ -19,9 +19,14 @@ public class ObstacleSpawner : MonoBehaviour
         _camera = Camera.main;
         _screenBounds =
             _camera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, _camera.transform.position.z));
+        StartSpawn(); 
+    }
 
+    public void StartSpawn()
+    {
         StartCoroutine(SpawnObstacles());
     }
+    
 
     private IEnumerator SpawnObstacles()
     {
@@ -37,6 +42,16 @@ public class ObstacleSpawner : MonoBehaviour
             Vector2 spawnPosition = new Vector2(
                 Random.Range(-_screenBounds.x + obstacleScript.spriteRenderer.bounds.size.x, _screenBounds.x + obstacleScript.spriteRenderer.bounds.size.x),
                 _screenBounds.y + + obstacleScript.spriteRenderer.bounds.size.y);
+
+            if (obstacleInfo.type == InteractableType.Boss)
+            {
+                float centerX = _camera.ScreenToWorldPoint(new Vector3(Screen.width / 2, 0, 0)).x;
+
+                // Получаем координату за верхней границей видимости камеры по высоте
+                float topY = _screenBounds.y + obstacleScript.spriteRenderer.bounds.size.y;
+
+                spawnPosition = new Vector2(centerX, topY);
+            }
 
             if (obstacleFromPool != null)
             {
