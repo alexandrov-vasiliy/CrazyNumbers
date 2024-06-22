@@ -29,6 +29,11 @@ public class ObstacleSpawner : MonoBehaviour
     {
         StartCoroutine(SpawnObstacles());
     }
+
+    public void StopSpawn()
+    {
+        StopAllCoroutines();
+    }
     
 
     private IEnumerator SpawnObstacles()
@@ -46,7 +51,7 @@ public class ObstacleSpawner : MonoBehaviour
             {
                 Vector2 spawnPosition = CalculateSpawnPosition(obstacleInfo, obstacleScript);
                 obstacleFromPool.SetActive(true);
-                obstacleScript.InitObstacle(spawnPosition, obstacleInfo.force, obstacleInfo.gravityScale);
+                obstacleScript.InitObstacle(spawnPosition, obstacleInfo.force, obstacleInfo.gravityScale, obstacleInfo.type);
             }
 
             yield return new WaitForSeconds(obstacleInfo.spawnRate);

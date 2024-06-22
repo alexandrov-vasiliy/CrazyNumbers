@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class FullScreenObstacle : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private CircleCollider2D _circleCollider;
+    [SerializeField] private BoxCollider2D _boxCollider;
 
    public  void OnEnable()
     {
@@ -30,7 +31,7 @@ public class FullScreenObstacle : MonoBehaviour
    
         // Корректировка радиуса коллайдера в соответствии с масштабированным спрайтом
         // Считаем диаметр спрайта в мировых координатах и делим его пополам, чтобы получить радиус
-        _circleCollider.radius = (screenWidthInWorldUnits / 2) / transform.localScale.x;
+        _boxCollider.size = new Vector2(screenWidthInWorldUnits / transform.localScale.x, screenWidthInWorldUnits / transform.localScale.x);
     }
 
 }

@@ -7,9 +7,9 @@ public class DivideObstacle : BaseObstacle, IInteractable
 {
     
     [SerializeField] private TextMeshPro number;
-    public override void InitObstacle(Vector2 position, float force, float gravityScale)
+    public override void InitObstacle(Vector2 position, float force, float gravityScale,InteractableType type)
     {
-        base.InitObstacle(position, force, gravityScale);
+        base.InitObstacle(position, force, gravityScale, type);
 
         number.text = $"/ {NumberForce}";
         transform.position = position;

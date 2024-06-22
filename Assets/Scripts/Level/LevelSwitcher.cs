@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Level;
 using Levels;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class LevelSwitcher : MonoBehaviour
 {
     [SerializeField] private List<LevelConfig> _levels;
 
-    private int _currentLevelIndex = 0;
+    [SerializeField] private int _currentLevelIndex = 0;
 
     private AudioManager _audioManager;
     private UIManager _uIManager;
@@ -37,20 +38,18 @@ public class LevelSwitcher : MonoBehaviour
       //  _levelSaver = levelSaver;
         _playerEvents = playerEvents;
     }
-
-    private void Start()
-    {
-        PlayLevel();
-    }
+    
 
     private void OnEnable()
     {
         _playerEvents.OnPlayerDead += GameOver;
+        _playerEvents.OnLevelComplete += NextLevel;
     }
 
     private void OnDisable()
     {
         _playerEvents.OnPlayerDead -= GameOver;
+        _playerEvents.OnLevelComplete -= NextLevel;
     }
 
     public void RestartGame()
@@ -59,11 +58,13 @@ public class LevelSwitcher : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
-
-        _uIManager.ShowGameplay();
+        
         ClearScene();
-        _playerForce.ResetCurrentScore();
-        _obstacleSpawner.StartSpawn();
+        _obstacleSpawner.StopSpawn();
+        _uIManager.ShowGameplay();
+        PlayLevel();
+        _playerForce.ResetCurrentForce();
+
     }
 
 
@@ -83,8 +84,18 @@ public class LevelSwitcher : MonoBehaviour
 
     public void NextLevel()
     {
-        _currentLevelIndex++;
+        if (_levels.Count-1 > _currentLevelIndex)
+        {
+            _currentLevelIndex++;
+        }
+        else
+        {
+            _currentLevelIndex = 0;
+        }
+        
    //     _levelSaver.SaveLevel(_currentLevelIndex);
+        PlayLevel();
+        _playerForce.ResetCurrentForce();
     }
 
     public void PlayLevel()
@@ -100,7 +111,7 @@ public class LevelSwitcher : MonoBehaviour
         {
             _player.gameObject.SetActive(false);
             ClearScene();
-            StopAllCoroutines();
+            _obstacleSpawner.StopSpawn();
             _audioManager.PlayEffects(_audioManager.gameOver);
             _uIManager.ShowGameOver();
             _playerForce.UpdateScoreGameover();

@@ -12,6 +12,8 @@ public class Obstacle : BaseObstacle, IInteractable
     [SerializeField] private Color ApplyColor;
     [SerializeField] private Color DangerColor;
 
+
+    
     private void OnEnable()
     {
         _playerForce.OnPlayerForceUpdate += ChangeColorFromPlayerForce;
@@ -22,10 +24,12 @@ public class Obstacle : BaseObstacle, IInteractable
         _playerForce.OnPlayerForceUpdate -= ChangeColorFromPlayerForce;
     }
 
-    public override void InitObstacle(Vector2 position, float force, float gravityScale)
+    public override void InitObstacle(Vector2 position, float force, float gravityScale, InteractableType type)
     {
-        base.InitObstacle(position, force, gravityScale);
-
+        base.InitObstacle(position, force, gravityScale, type);
+        
+        
+        
         ChangeColorFromPlayerForce(_playerForce.Value);
 
         number.text = NumberForce.ToString();
@@ -46,6 +50,12 @@ public class Obstacle : BaseObstacle, IInteractable
             _playerForce.IncrementPlayerForce(NumberForce);
             _playerEvents.ApplyObstacle();
             gameObject.SetActive(false);
+
+            if (_type == InteractableType.Boss)
+            {
+                _playerEvents.LevelComplete();
+            }
+            
         }
         else
         {

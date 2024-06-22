@@ -28,7 +28,7 @@ public class PlayerForce : MonoBehaviour
 		}
 		highScore = PlayerPrefs.GetFloat("HighScore");
 		UpdateHighScore();
-		ResetCurrentScore();
+		ResetCurrentForce();
 	}
 
 	private void UpdateHighScore()
@@ -42,7 +42,7 @@ public class PlayerForce : MonoBehaviour
 	}
 	
 
-	public void ResetCurrentScore()
+	public void ResetCurrentForce()
 	{
 		ResetPlayerForce();
 	}

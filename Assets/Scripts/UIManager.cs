@@ -22,12 +22,14 @@ public class UIManager : MonoBehaviour
 	private AudioManager _audioManager;
 	private PlayerForce _playerForce;
 	private LevelSwitcher _levelSwitcher;
+	private ObstacleSpawner _obstacleSpawner;
 	[Inject]
-	public void Construct(AudioManager audioManager, PlayerForce playerForce, LevelSwitcher levelSwitcher)
+	public void Construct(AudioManager audioManager, PlayerForce playerForce, LevelSwitcher levelSwitcher, ObstacleSpawner obstacleSpawner)
 	{
 		_audioManager = audioManager;
 		_playerForce = playerForce;
 		_levelSwitcher = levelSwitcher;
+		_obstacleSpawner = obstacleSpawner;
 	}
 
 	private void Start()
@@ -47,6 +49,7 @@ public class UIManager : MonoBehaviour
 			{
 				_audioManager.PlayEffects(_audioManager.buttonClick);
 				ShowGameplay();
+				_levelSwitcher.PlayLevel();
 			}
 		}
 		else if (Input.GetMouseButtonUp(0) && clicked && gameState == GameState.MENU)
@@ -57,7 +60,7 @@ public class UIManager : MonoBehaviour
 
 	public void ShowMainMenu()
 	{
-		_playerForce.ResetCurrentScore();
+		_playerForce.ResetCurrentForce();
 		clicked = true;
 		mainMenuGui.SetActive(value: true);
 		pauseGui.SetActive(value: false);
@@ -70,6 +73,7 @@ public class UIManager : MonoBehaviour
 		gameState = GameState.MENU;
 		_audioManager.PlayEffects(_audioManager.buttonClick);
 		_levelSwitcher.ClearScene();
+		_obstacleSpawner.StopSpawn();
 	}
 
 	public void ShowPauseMenu()
@@ -98,6 +102,7 @@ public class UIManager : MonoBehaviour
 		gameplayGui.SetActive(value: true);
 		gameOverGui.SetActive(value: false);
 		gameState = GameState.PLAYING;
+
 		_audioManager.PlayEffects(_audioManager.buttonClick);
 		_audioManager.PlayMusic(_audioManager.gameMusic);
 	}

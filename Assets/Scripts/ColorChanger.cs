@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-public class CollorChanger : MonoBehaviour
+public class ColorChanger : MonoBehaviour
 {
 
 
