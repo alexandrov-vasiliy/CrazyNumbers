@@ -254,6 +254,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270678127}
   m_CullTransparentMesh: 1
+--- !u!1 &582986228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 582986230}
+  - component: {fileID: 582986229}
+  m_Layer: 0
+  m_Name: LevelSwitcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &582986229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582986228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dabb830ccd64413825bc228fdbe837d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levels:
+  - {fileID: 11400000, guid: f861c9d439aa7463f8ae6cd1addb43ee, type: 2}
+--- !u!4 &582986230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582986228}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.8920875, y: 1.9811081, z: -0.07800586}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &793030847
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2079e697a0b04833bcfa3978b8e4392d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spritesCollection: {fileID: 0}
+  _spritesCollection: {fileID: 11400000, guid: eefccfcea81e94829ab472feff5c265e, type: 2}
   _spriteRenderer: {fileID: 969369197}
 --- !u!1 &1207323307
 GameObject:
@@ -3074,8 +3120,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1790602295973277514}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 582986229}
+        m_TargetAssemblyTypeName: LevelSwitcher, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
@@ -3511,8 +3557,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1790602295973277514}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 582986229}
+        m_TargetAssemblyTypeName: LevelSwitcher, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
@@ -3565,8 +3611,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf8f827e426ef79d06e447842f993ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerForce: {fileID: 1790602295973277505}
-  player: {fileID: 1790602295671287537}
   trailMaterial: {fileID: 2100000, guid: cdc8a270d25b949158e270461b9687b6, type: 2}
   colorTable:
   - {r: 1, g: 0.3686275, b: 0.3568628, a: 1}
@@ -4566,3 +4610,4 @@ SceneRoots:
   - {fileID: 1545935938}
   - {fileID: 793030849}
   - {fileID: 1477260504}
+  - {fileID: 582986230}

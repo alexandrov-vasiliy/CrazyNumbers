@@ -9,6 +9,8 @@ public class GameInstaller : MonoInstaller
         Container.Bind<UIManager>().FromComponentInHierarchy().AsSingle().NonLazy();
         Container.Bind<PlayerForce>().FromComponentInHierarchy().AsSingle().NonLazy();
         Container.Bind<PlayerEvents>().FromComponentInHierarchy().AsSingle().NonLazy();
+        Container.Bind<Player>().FromComponentInHierarchy().AsSingle().NonLazy();
         Container.Bind<ObstacleSpawner>().FromComponentInHierarchy().AsSingle().NonLazy();
+        Container.Bind<LevelSwitcher>().FromComponentInHierarchy().AsSingle().NonLazy();
     }
 }

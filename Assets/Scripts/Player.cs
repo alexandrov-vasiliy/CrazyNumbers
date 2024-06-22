@@ -40,13 +40,11 @@ public class Player : MonoBehaviour
 
     private void OnEnable()
     {
-        _playerEvents.OnPlayerDead += GameOver;
         _playerEvents.OnPlayerApplyObstacle += ApplyObstacle;
     }
 
     private void OnDisable()
     {
-        _playerEvents.OnPlayerDead -= GameOver;
         _playerEvents.OnPlayerApplyObstacle -= ApplyObstacle;
     }
 
@@ -58,12 +56,7 @@ public class Player : MonoBehaviour
 
         _audioManager.PlayEffects(_audioManager.sameColor);
     }
-
-    private void GameOver()
-    {
-        _audioManager.PlayEffects(_audioManager.wrongColor);
-        GameManager.Instance.GameOver();
-    }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -21,12 +21,13 @@ public class UIManager : MonoBehaviour
 
 	private AudioManager _audioManager;
 	private PlayerForce _playerForce;
-
+	private LevelSwitcher _levelSwitcher;
 	[Inject]
-	public void Construct(AudioManager audioManager, PlayerForce playerForce)
+	public void Construct(AudioManager audioManager, PlayerForce playerForce, LevelSwitcher levelSwitcher)
 	{
 		_audioManager = audioManager;
 		_playerForce = playerForce;
+		_levelSwitcher = levelSwitcher;
 	}
 
 	private void Start()
@@ -68,7 +69,7 @@ public class UIManager : MonoBehaviour
 		}
 		gameState = GameState.MENU;
 		_audioManager.PlayEffects(_audioManager.buttonClick);
-		GameManager.Instance.ClearScene();
+		_levelSwitcher.ClearScene();
 	}
 
 	public void ShowPauseMenu()
