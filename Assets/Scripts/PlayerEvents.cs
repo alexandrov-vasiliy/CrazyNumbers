@@ -5,7 +5,8 @@ public class PlayerEvents : MonoBehaviour
 {
     public event Action OnPlayerApplyObstacle;
     public event Action OnPlayerDead;
-
+    
+    
     public event Action OnLevelComplete;
 
     public void ApplyObstacle()
