@@ -22,7 +22,7 @@ MonoBehaviour:
     gravityScale: 0.5
     type: 0
   - spawnRate: 1
-    force: 1
+    force: 5
     gravityScale: 0.5
     type: 0
   - spawnRate: 1
