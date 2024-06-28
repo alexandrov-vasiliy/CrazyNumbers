@@ -15,11 +15,11 @@ MonoBehaviour:
   obstacles:
   - spawnRate: 1
     force: 1
-    gravityScale: 0.5
+    gravityScale: 0.9
     type: 0
   - spawnRate: 1
     force: 111
-    gravityScale: 0.5
+    gravityScale: 0.7
     type: 0
   - spawnRate: 1
     force: 1
@@ -27,11 +27,11 @@ MonoBehaviour:
     type: 0
   - spawnRate: 1
     force: 2
-    gravityScale: 0.5
+    gravityScale: 0.6
     type: 1
   - spawnRate: 1
     force: 111
-    gravityScale: 0.5
+    gravityScale: 0.8
     type: 0
   - spawnRate: 1
     force: 4
