@@ -63,7 +63,7 @@ MonoBehaviour:
     type: 0
   - spawnRate: 0
     force: 2
-    gravityScale: 0
+    gravityScale: 1
     type: 1
   - spawnRate: 1
     force: 23
