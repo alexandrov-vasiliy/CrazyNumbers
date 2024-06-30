@@ -375,32 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dabb830ccd64413825bc228fdbe837d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levels:
-  - {fileID: 11400000, guid: f861c9d439aa7463f8ae6cd1addb43ee, type: 2}
-  - {fileID: 11400000, guid: a87e4b9663ed7734fa95c326eb863a55, type: 2}
-  - {fileID: 11400000, guid: d0670ad0d71e00f4bb8c1c9c141c3e86, type: 2}
-  - {fileID: 11400000, guid: 2dfe6726eda304a45a876badbba23e15, type: 2}
-  - {fileID: 11400000, guid: ddd181fb044d836469e8e40db05d90ac, type: 2}
-  - {fileID: 11400000, guid: 3164dea219aa98a45b52fb6898a2fb81, type: 2}
-  - {fileID: 11400000, guid: 47529072c4e320741a5197f644d66811, type: 2}
-  - {fileID: 11400000, guid: 8389fbb3c125f5e4988d708215a351bf, type: 2}
-  - {fileID: 11400000, guid: cd3e7c7455caee54bb00c7cb0c0908fb, type: 2}
-  - {fileID: 11400000, guid: f903b91d00edd2c44b4d3f2cafd3188d, type: 2}
-  - {fileID: 11400000, guid: 8b5199eb425269f4880fff2e021b2060, type: 2}
-  - {fileID: 11400000, guid: bb8d0fb98b58b3e49bebaf8be9343487, type: 2}
-  - {fileID: 11400000, guid: bdf7b7cbfac2e2f4f9ac18ad926ba5fe, type: 2}
-  - {fileID: 11400000, guid: 8389fbb3c125f5e4988d708215a351bf, type: 2}
-  - {fileID: 11400000, guid: a87e4b9663ed7734fa95c326eb863a55, type: 2}
-  - {fileID: 11400000, guid: 4bf8ebf23eb2e584ab22cb3024571d92, type: 2}
-  - {fileID: 11400000, guid: 05ead0fad3658074fa451fa799370bb6, type: 2}
-  - {fileID: 11400000, guid: 2fd554c7b1507814e9eac1465393f3ee, type: 2}
-  - {fileID: 11400000, guid: 6795ed55c4b2a1949a71be94a2a002ff, type: 2}
-  - {fileID: 11400000, guid: 80b1b222e6fe17848aab21ae7fecdb9d, type: 2}
-  - {fileID: 11400000, guid: 4a2b96a1a0ecc3840a1a12b3c3692e09, type: 2}
-  - {fileID: 11400000, guid: 746300d8d07154f4b80c3cbf5b42fc82, type: 2}
-  - {fileID: 11400000, guid: 05ead0fad3658074fa451fa799370bb6, type: 2}
-  - {fileID: 11400000, guid: ddd181fb044d836469e8e40db05d90ac, type: 2}
-  - {fileID: 11400000, guid: a42c5f8049bb5774c9e0d8f2b571dba5, type: 2}
+  _levels: []
   _currentLevelIndex: 24
   _levelCompletePanel: {fileID: 2074141560}
 --- !u!4 &582986230
@@ -429,6 +404,7 @@ GameObject:
   - component: {fileID: 667453324}
   - component: {fileID: 667453326}
   - component: {fileID: 667453325}
+  - component: {fileID: 667453327}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -497,6 +473,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667453323}
   m_CullTransparentMesh: 1
+--- !u!114 &667453327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667453323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
+  textLComponent: {fileID: 667453325}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: "\u041F\u0440\u043E\u043F\u0443\u0441\u043A \u0443\u0440\u043E\u0432\u043D\u044F"
+  ru: "\u041F\u0440\u043E\u043F\u0443\u0441\u043A \u0443\u0440\u043E\u0432\u043D\u044F"
+  en: Skip level
+  tr: Seviyeyi atla
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  changeOnlyFont: 0
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  additionalText: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 3/3 completed
+  componentTextField: 0
+  countLang: 3
 --- !u!1 &741412824
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,6 +536,7 @@ GameObject:
   - component: {fileID: 741412825}
   - component: {fileID: 741412828}
   - component: {fileID: 741412827}
+  - component: {fileID: 741412829}
   m_Layer: 5
   m_Name: LevelText
   m_TagString: 
@@ -576,6 +605,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741412824}
   m_CullTransparentMesh: 1
+--- !u!114 &741412829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741412824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
+  textLComponent: {fileID: 741412827}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: Level -
+  ru: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C -"
+  en: Level -
+  tr: 
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  changeOnlyFont: 0
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  additionalText: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 2/2 completed
+  componentTextField: 0
+  countLang: 2
 --- !u!224 &756037256 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3210080491720745216, guid: 44b91ba5f28f4ba4d9d62f6ee52d0673, type: 3}
@@ -1544,6 +1625,58 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1874489397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790602294077451980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
+  textLComponent: {fileID: 1790602295973277506}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: "\u0411\u0415\u0417\u0423\u041C\u041D\u042B\u0415 \u0427\u0418\u0421\u041B\u0410"
+  ru: "\u0411\u0415\u0417\u0423\u041C\u041D\u042B\u0415 \u0427\u0418\u0421\u041B\u0410"
+  en: CRAZY NUMBERS
+  tr: 
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  changeOnlyFont: 0
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  additionalText: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 2/2 completed
+  componentTextField: 0
+  countLang: 2
 --- !u!1 &1977681481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,6 +1688,7 @@ GameObject:
   - component: {fileID: 1977681482}
   - component: {fileID: 1977681484}
   - component: {fileID: 1977681483}
+  - component: {fileID: 1977681485}
   m_Layer: 5
   m_Name: LevelText
   m_TagString: 
@@ -1623,6 +1757,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977681481}
   m_CullTransparentMesh: 1
+--- !u!114 &1977681485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977681481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
+  textLComponent: {fileID: 1977681483}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: Level Complete!
+  ru: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C \u043F\u0440\u043E\u0439\u0434\u0435\u043D!"
+  en: Level Complete!
+  tr: 
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  changeOnlyFont: 0
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  additionalText: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 2/2 completed
+  componentTextField: 0
+  countLang: 2
 --- !u!1 &2074141560
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,6 +2052,7 @@ GameObject:
   - component: {fileID: 1790602297818771219}
   - component: {fileID: 1790602297785216760}
   - component: {fileID: 1790602295973277487}
+  - component: {fileID: 1790602297818771220}
   m_Layer: 5
   m_Name: GameOverTitle
   m_TagString: 
@@ -1888,7 +2075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1790602294077451968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,6 +2087,7 @@ GameObject:
   - component: {fileID: 1790602297818771222}
   - component: {fileID: 1790602297785216762}
   - component: {fileID: 1790602295973277489}
+  - component: {fileID: 1790602297818771223}
   m_Layer: 5
   m_Name: GameTitle
   m_TagString: 
@@ -2085,6 +2273,7 @@ GameObject:
   - component: {fileID: 1790602297818771230}
   - component: {fileID: 1790602297785216768}
   - component: {fileID: 1790602295973277506}
+  - component: {fileID: 1874489397}
   m_Layer: 5
   m_Name: GameTitle
   m_TagString: 
@@ -2104,6 +2293,7 @@ GameObject:
   - component: {fileID: 1790602297785216769}
   - component: {fileID: 1790602295973277507}
   - component: {fileID: 1790602295654510319}
+  - component: {fileID: 1790602297818771234}
   m_Layer: 5
   m_Name: TapTitle
   m_TagString: 
@@ -4360,9 +4550,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1790602297818771227}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 190, y: -120}
   m_SizeDelta: {x: 270, y: 270}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1790602297818771215
@@ -4442,9 +4632,63 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -305}
-  m_SizeDelta: {x: 1100, y: 240}
+  m_AnchoredPosition: {x: -0.0023041, y: -354}
+  m_SizeDelta: {x: 1339.192, y: 446.2}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1790602297818771220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790602294077451965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
+  textLComponent: {fileID: 1790602295973277487}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: "\u0422\u042B \u041F\u0420\u041E\u0418\u0413\u0420\u0410\u041B \u041F\u041E\u041F\u0420\u041E\u0411\u0423\u0419
+    \u0421\u041D\u041E\u0412\u0410"
+  ru: "\u0422\u042B \u041F\u0420\u041E\u0418\u0413\u0420\u0410\u041B \u041F\u041E\u041F\u0420\u041E\u0411\u0423\u0419
+    \u0421\u041D\u041E\u0412\u0410"
+  en: YOU LOST TRY AGAIN
+  tr: 
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  changeOnlyFont: 0
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  additionalText: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 2/2 completed
+  componentTextField: 0
+  countLang: 2
 --- !u!224 &1790602297818771221
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4488,6 +4732,58 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 400}
   m_SizeDelta: {x: 900, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1790602297818771223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790602294077451968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
+  textLComponent: {fileID: 1790602295973277489}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: Paused
+  ru: "\u041F\u0440\u0438\u043E\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u043E"
+  en: Paused
+  tr: 
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  changeOnlyFont: 0
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  additionalText: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 2/2 completed
+  componentTextField: 0
+  countLang: 2
 --- !u!224 &1790602297818771224
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4545,9 +4841,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1790602297818771227}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 635, y: -120}
   m_SizeDelta: {x: 220, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1790602297818771227
@@ -4587,7 +4883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 130, y: -120}
+  m_AnchoredPosition: {x: 265, y: -120}
   m_SizeDelta: {x: 220, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1790602297818771230
@@ -4663,9 +4959,63 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 415, y: -120}
+  m_AnchoredPosition: {x: 550, y: -120}
   m_SizeDelta: {x: 190, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1790602297818771234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790602294077451981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMPComponent: {fileID: 0}
+  uniqueFontTMP: {fileID: 0}
+  textLComponent: {fileID: 1790602295973277507}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: "\u041F\u0415\u0420\u0415\u0422\u0410\u0429\u0418 \u0427\u0422\u041E \u0411\u042B
+    \u0418\u0413\u0420\u0410\u0422\u042C"
+  ru: "\u041F\u0415\u0420\u0415\u0422\u0410\u0429\u0418 \u0427\u0422\u041E \u0411\u042B
+    \u0418\u0413\u0420\u0410\u0422\u042C"
+  en: DRAG TO PLAY
+  tr: 
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  changeOnlyFont: 0
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  additionalText: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 2/2 completed
+  componentTextField: 0
+  countLang: 2
 --- !u!224 &1790602297818771235
 RectTransform:
   m_ObjectHideFlags: 0
