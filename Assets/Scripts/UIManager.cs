@@ -114,7 +114,7 @@ public class UIManager : MonoBehaviour
 		gameplayGui.SetActive(value: false);
 		gameOverGui.SetActive(value: true);
 		gameState = GameState.GAMEOVER;
-		_audioManager.PlayMusic(_audioManager.menuMusic);
+		_audioManager.PlayMusic(_audioManager.gameOverMusic);
 	}
 
 	public bool IsButton()

@@ -6,11 +6,14 @@ public class AudioManager : MonoBehaviour
 	public AudioSource efxSource;
 
 	public AudioSource musicSource;
+	public AudioSource bossSource;
 
 	[Header("Background Music")]
 	public AudioClip menuMusic;
 
 	public AudioClip gameMusic;
+	
+	public AudioClip gameOverMusic;
 
 	[Header("Sound Effects")]
 	public AudioClip buttonClick;
@@ -20,6 +23,8 @@ public class AudioManager : MonoBehaviour
 	public AudioClip sameColor;
 
 	public AudioClip wrongColor;
+	
+	public AudioClip[] bossSpawn;
 
 	private bool muteMusic;
 
@@ -54,6 +59,7 @@ public class AudioManager : MonoBehaviour
 	{
 		if (!muteEfx)
 		{
+			Debug.Log($"Play Effect {clip.name}");
 			efxSource.PlayOneShot(clip);
 		}
 	}
@@ -76,14 +82,7 @@ public class AudioManager : MonoBehaviour
 
 	public void MuteEfx()
 	{
-		if (muteEfx)
-		{
-			PlayerPrefs.SetInt("MuteEfx", 0);
-		}
-		else
-		{
-			PlayerPrefs.SetInt("MuteEfx", 1);
-		}
+		PlayerPrefs.SetInt("MuteEfx", muteEfx ? 0 : 1);
 		muteEfx = !muteEfx;
 	}
 
@@ -95,5 +94,16 @@ public class AudioManager : MonoBehaviour
 	public bool IsEfxMute()
 	{
 		return muteEfx;
+	}
+
+	public void PlayBossSound()
+	{
+		if (bossSpawn.Length > 0)
+		{
+			var clip = bossSpawn[Random.Range(0, bossSpawn.Length)];
+			bossSource.clip = clip;
+			bossSource.Play();
+		}
+
 	}
 }

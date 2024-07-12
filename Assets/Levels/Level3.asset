@@ -18,45 +18,45 @@ MonoBehaviour:
     gravityScale: 0.9
     type: 0
   - spawnRate: 1
-    force: 111
+    force: 2
     gravityScale: 0.7
     type: 0
   - spawnRate: 1
-    force: 1
+    force: 3
+    gravityScale: 0.5
+    type: 0
+  - spawnRate: 1
+    force: 4
+    gravityScale: 0.6
+    type: 1
+  - spawnRate: 1
+    force: 5
+    gravityScale: 0.8
+    type: 0
+  - spawnRate: 1
+    force: 6
+    gravityScale: 1
+    type: 0
+  - spawnRate: 1
+    force: 7
+    gravityScale: 1
+    type: 0
+  - spawnRate: 1
+    force: 8
+    gravityScale: 1
+    type: 0
+  - spawnRate: 1
+    force: 9
+    gravityScale: 1
+    type: 0
+  - spawnRate: 1
+    force: 10
     gravityScale: 0.5
     type: 0
   - spawnRate: 1
     force: 2
-    gravityScale: 0.6
-    type: 1
-  - spawnRate: 1
-    force: 111
-    gravityScale: 0.8
-    type: 0
-  - spawnRate: 1
-    force: 4
-    gravityScale: 1
-    type: 0
-  - spawnRate: 1
-    force: 2.5
-    gravityScale: 1
-    type: 1
-  - spawnRate: 1
-    force: 10
-    gravityScale: 1
-    type: 0
-  - spawnRate: 1
-    force: 0.5
-    gravityScale: 1
-    type: 1
-  - spawnRate: 1
-    force: 3
     gravityScale: 0.5
-    type: 2
-  - spawnRate: 1
-    force: 5
-    gravityScale: 0.5
-    type: 0
+    type: 1
   - spawnRate: 1
     force: 7
     gravityScale: 0.5
@@ -66,6 +66,6 @@ MonoBehaviour:
     gravityScale: 0.5
     type: 0
   - spawnRate: 2
-    force: 50
+    force: 44
     gravityScale: 1
     type: 3

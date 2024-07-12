@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class PlayerForce : MonoBehaviour
 {
-    public Text currentScoreGameOverLabel;
-
 
     public Action<int> OnPlayerForceUpdate;
     public int Value => _value;
@@ -53,6 +51,5 @@ public class PlayerForce : MonoBehaviour
     public void UpdateScoreGameover()
     {
         ResetPlayerForce();
-        currentScoreGameOverLabel.text = Value.ToString("F1");
     }
 }
