@@ -1,0 +1,5 @@
+/Users/a1234/Documents/GameDev/Unity/Projects/CrazyNumbers/.utmp/Debug/6h1s3h4k/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/a1234/Documents/GameDev/Unity/Projects/CrazyNumbers/.utmp/Debug/6h1s3h4k/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/a1234/Documents/GameDev/Unity/Projects/CrazyNumbers/.utmp/Debug/6h1s3h4k/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
+/Users/a1234/Documents/GameDev/Unity/Projects/CrazyNumbers/.utmp/Debug/6h1s3h4k/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
+/Users/a1234/Documents/GameDev/Unity/Projects/CrazyNumbers/.utmp/Debug/6h1s3h4k/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir

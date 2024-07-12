@@ -1,0 +1,5 @@
+/Users/a1234/Documents/GameDev/Unity/Projects/CrazyNumbers/.utmp/Debug/3y5i5p37/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/a1234/Documents/GameDev/Unity/Projects/CrazyNumbers/.utmp/Debug/3y5i5p37/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/a1234/Documents/GameDev/Unity/Projects/CrazyNumbers/.utmp/Debug/3y5i5p37/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+/Users/a1234/Documents/GameDev/Unity/Projects/CrazyNumbers/.utmp/Debug/3y5i5p37/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+/Users/a1234/Documents/GameDev/Unity/Projects/CrazyNumbers/.utmp/Debug/3y5i5p37/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

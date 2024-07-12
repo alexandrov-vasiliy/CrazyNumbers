@@ -1,12 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Adver;
+
 using Level;
 using Levels;
 using UnityEngine;
-using YG;
 using Zenject;
 
 public class LevelSwitcher : MonoBehaviour
