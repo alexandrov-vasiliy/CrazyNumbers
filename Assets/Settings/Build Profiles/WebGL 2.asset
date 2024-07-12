@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 15003, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: WebGL
+  m_Name: WebGL 2
   m_EditorClassIdentifier: 
   m_BuildTarget: 20
   m_Subtarget: 0
   m_PlatformId: 84a3bb9e7420477f885e98145999eb20
   m_PlatformBuildProfile:
-    rid: 8700187458123857924
+    rid: 1975840498067439639
   m_Scenes: []
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
@@ -32,14 +32,14 @@ MonoBehaviour:
     - line: '|   targetDevice: 2'
     - line: '|   useOnDemandResources: 0'
     - line: '|   accelerometerFrequency: 60'
-    - line: '|   companyName: DefaultCompany'
+    - line: '|   companyName: Alexandrov'
     - line: '|   productName: CrazyNumbers'
     - line: '|   defaultCursor: {instanceID: 0}'
     - line: '|   cursorHotspot: {x: 0, y: 0}'
     - line: '|   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b:
         0.1254902, a: 1}'
-    - line: '|   m_ShowUnitySplashScreen: 1'
-    - line: '|   m_ShowUnitySplashLogo: 0'
+    - line: '|   m_ShowUnitySplashScreen: 0'
+    - line: '|   m_ShowUnitySplashLogo: 1'
     - line: '|   m_SplashScreenOverlayOpacity: 1'
     - line: '|   m_SplashScreenAnimation: 1'
     - line: '|   m_SplashScreenLogoStyle: 1'
@@ -68,7 +68,7 @@ MonoBehaviour:
     - line: '|   defaultScreenWidthWeb: 960'
     - line: '|   defaultScreenHeightWeb: 600'
     - line: '|   m_StereoRenderingPath: 0'
-    - line: '|   m_ActiveColorSpace: 1'
+    - line: '|   m_ActiveColorSpace: 0'
     - line: '|   unsupportedMSAAFallback: 0'
     - line: '|   m_SpriteBatchVertexThreshold: 300'
     - line: '|   m_MTRendering: 1'
@@ -102,7 +102,7 @@ MonoBehaviour:
     - line: '|   androidApplicationEntry: 1'
     - line: '|   defaultIsNativeResolution: 1'
     - line: '|   macRetinaSupport: 1'
-    - line: '|   runInBackground: 0'
+    - line: '|   runInBackground: 1'
     - line: '|   captureSingleScreen: 0'
     - line: '|   muteOtherAudioSources: 0'
     - line: '|   Prepare IOS For Recording: 0'
@@ -183,7 +183,8 @@ MonoBehaviour:
     - line: '|   androidSupportedAspectRatio: 1'
     - line: '|   androidMaxAspectRatio: 2.1'
     - line: '|   androidMinAspectRatio: 1'
-    - line: '|   applicationIdentifier: {}'
+    - line: '|   applicationIdentifier:'
+    - line: '|     Standalone: com.DefaultCompany.CrazyNumbers'
     - line: '|   buildNumber:'
     - line: '|     Standalone: 0'
     - line: '|     VisionOS: 0'
@@ -306,7 +307,15 @@ MonoBehaviour:
     - line: '|   AndroidAppBundleSizeToValidate: 150'
     - line: '|   AndroidReportGooglePlayAppDependencies: 1'
     - line: '|   androidSymbolsSizeThreshold: 800'
-    - line: '|   m_BuildTargetIcons: []'
+    - line: '|   m_BuildTargetIcons:'
+    - line: '|   - m_BuildTarget: '
+    - line: '|     m_Icons:'
+    - line: '|     - serializedVersion: 2'
+    - line: '|       m_Icon: {fileID: 2800000, guid: 572ef2c5575b7af458733a3323e657bb,
+        type: 3}'
+    - line: '|       m_Width: 128'
+    - line: '|       m_Height: 128'
+    - line: '|       m_Kind: 0'
     - line: '|   m_BuildTargetPlatformIcons:'
     - line: '|   - m_BuildTarget: iPhone'
     - line: '|     m_Icons:'
@@ -772,7 +781,7 @@ MonoBehaviour:
     - line: '|   webGLWasmArithmeticExceptions: 0'
     - line: '|   webGLLinkerTarget: 1'
     - line: '|   webGLThreadsSupport: 0'
-    - line: '|   webGLDecompressionFallback: 1'
+    - line: '|   webGLDecompressionFallback: 0'
     - line: '|   webGLInitialMemorySize: 32'
     - line: '|   webGLMaximumMemorySize: 2048'
     - line: '|   webGLMemoryGrowthMode: 2'
@@ -796,9 +805,9 @@ MonoBehaviour:
     - line: '|     PS5: DOTWEEN'
     - line: '|     QNX: DOTWEEN'
     - line: '|     Stadia: DOTWEEN'
-    - line: '|     Standalone: DOTWEEN'
+    - line: '|     Standalone: DOTWEEN;YG_PLUGIN_YANDEX_GAME;YG_NEWTONSOFT_FOR_AUTOLOCALIZATION;YG_NEWTONSOFT_FOR_SAVES;YG_TEXT_MESH_PRO'
     - line: '|     VisionOS: DOTWEEN'
-    - line: '|     WebGL: DOTWEEN;YG_NEWTONSOFT_FOR_AUTOLOCALIZATION'
+    - line: '|     WebGL: DOTWEEN;YG_PLUGIN_YANDEX_GAME;YG_NEWTONSOFT_FOR_AUTOLOCALIZATION;YG_NEWTONSOFT_FOR_SAVES;YG_TEXT_MESH_PRO'
     - line: '|     Windows Store Apps: DOTWEEN'
     - line: '|     XboxOne: DOTWEEN'
     - line: '|     iPhone: DOTWEEN'
@@ -819,7 +828,7 @@ MonoBehaviour:
     - line: '|     QNX: 1'
     - line: '|     Stadia: 1'
     - line: '|     VisionOS: 1'
-    - line: '|     WebGL: 1'
+    - line: '|     WebGL: 4'
     - line: '|     Windows Store Apps: 1'
     - line: '|     XboxOne: 1'
     - line: '|     iPhone: 1'
@@ -933,7 +942,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 8700187458123857924
+    - rid: 1975840498067439639
       type: {class: WebGLPlatformSettings, ns: UnityEditor.WebGL, asm: UnityEditor.WebGL.Extensions}
       data:
         m_Development: 0
