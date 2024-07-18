@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level19
   m_EditorClassIdentifier: 
   obstacles:
-  - spawnRate: 0
+  - spawnRate: 1
     force: 2
     gravityScale: 1
     type: 1
@@ -61,7 +61,7 @@ MonoBehaviour:
     force: 12
     gravityScale: 1
     type: 0
-  - spawnRate: 0
+  - spawnRate: 1
     force: 2
     gravityScale: 1
     type: 1

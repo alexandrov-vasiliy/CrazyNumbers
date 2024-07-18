@@ -60,7 +60,7 @@ MonoBehaviour:
   - spawnRate: 1
     force: 2
     gravityScale: 0.7
-    type: 2
+    type: 0
   - spawnRate: 1
     force: 16
     gravityScale: 0.6
@@ -85,7 +85,11 @@ MonoBehaviour:
     force: 25
     gravityScale: 0.9
     type: 0
-  - spawnRate: 0
+  - spawnRate: 1
+    force: 2
+    gravityScale: 0.6
+    type: 2
+  - spawnRate: 1
     force: 2
     gravityScale: 0.6
     type: 2

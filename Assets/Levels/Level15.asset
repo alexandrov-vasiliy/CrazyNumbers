@@ -29,10 +29,18 @@ MonoBehaviour:
     force: 2
     gravityScale: 0.8
     type: 2
+  - spawnRate: 1
+    force: 1
+    gravityScale: 0.5
+    type: 0
   - spawnRate: 3
     force: 0.6
-    gravityScale: 0.6
+    gravityScale: 1
     type: 2
+  - spawnRate: 1
+    force: 1
+    gravityScale: 0.5
+    type: 0
   - spawnRate: 1
     force: 2
     gravityScale: 0.5
@@ -40,6 +48,10 @@ MonoBehaviour:
   - spawnRate: 1
     force: 4
     gravityScale: 0.6
+    type: 0
+  - spawnRate: 1
+    force: 1
+    gravityScale: 0.5
     type: 0
   - spawnRate: 2
     force: 999
@@ -57,10 +69,10 @@ MonoBehaviour:
     force: 2
     gravityScale: 0.6
     type: 1
-  - spawnRate: 1
+  - spawnRate: 2
     force: 2
-    gravityScale: 0.7
-    type: 2
+    gravityScale: 0.6
+    type: 1
   - spawnRate: 1
     force: 16
     gravityScale: 0.6
@@ -88,6 +100,10 @@ MonoBehaviour:
   - spawnRate: 0
     force: 2
     gravityScale: 0.6
+    type: 2
+  - spawnRate: 1
+    force: 2
+    gravityScale: 0.7
     type: 2
   - spawnRate: 2
     force: 33

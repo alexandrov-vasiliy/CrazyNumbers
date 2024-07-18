@@ -93,6 +93,10 @@ MonoBehaviour:
     force: 33
     gravityScale: 0.6
     type: 0
+  - spawnRate: 2
+    force: 10
+    gravityScale: 0.6
+    type: 1
   - spawnRate: 1
     force: 45
     gravityScale: 0.7
@@ -125,10 +129,18 @@ MonoBehaviour:
     force: 45
     gravityScale: 1
     type: 0
+  - spawnRate: 2
+    force: 2
+    gravityScale: 1
+    type: 1
   - spawnRate: 1
     force: 23
     gravityScale: 1
     type: 0
+  - spawnRate: 2
+    force: 3
+    gravityScale: 0.8
+    type: 1
   - spawnRate: 1
     force: 999
     gravityScale: 1
