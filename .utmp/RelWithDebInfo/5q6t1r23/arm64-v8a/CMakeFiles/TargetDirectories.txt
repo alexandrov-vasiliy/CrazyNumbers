@@ -1,0 +1,5 @@
+C:/Users/aleks/Documents/CrazyNumbers/.utmp/RelWithDebInfo/5q6t1r23/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/aleks/Documents/CrazyNumbers/.utmp/RelWithDebInfo/5q6t1r23/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/aleks/Documents/CrazyNumbers/.utmp/RelWithDebInfo/5q6t1r23/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/Users/aleks/Documents/CrazyNumbers/.utmp/RelWithDebInfo/5q6t1r23/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+C:/Users/aleks/Documents/CrazyNumbers/.utmp/RelWithDebInfo/5q6t1r23/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir
