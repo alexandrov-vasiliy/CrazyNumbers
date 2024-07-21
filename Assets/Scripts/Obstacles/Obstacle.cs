@@ -11,6 +11,9 @@ public class Obstacle : BaseObstacle, IInteractable
 
     [SerializeField] private Color ApplyColor;
     [SerializeField] private Color DangerColor;
+    
+    [Inject]
+    private LevelSwitcher _levelSwitcher;
 
 
     
@@ -51,9 +54,15 @@ public class Obstacle : BaseObstacle, IInteractable
             _playerEvents.ApplyObstacle();
             gameObject.SetActive(false);
 
-            if (_type == InteractableType.Boss)
+            if (_type == InteractableType.Obstacle)
             {
-                _playerEvents.LevelComplete();
+                _levelSwitcher._obstacleReceived++;
+            }
+
+            if (_levelSwitcher._obstacleReceived == _levelSwitcher._obstacleCount)
+            {
+                _levelSwitcher.StartShowLevelComplete();
+                _levelSwitcher._obstacleReceived = 0;
             }
             
         }

@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
 using Level;
 using Levels;
 using UnityEngine;
@@ -16,10 +15,9 @@ public class LevelSwitcher : MonoBehaviour
 
     [SerializeField] private GameObject _levelCompletePanel;
 
-    
-    
+
     public Action<int> OnCurrentLevelChange;
-    
+
     private AudioManager _audioManager;
     private UIManager _uIManager;
     private ObstacleSpawner _obstacleSpawner;
@@ -27,16 +25,19 @@ public class LevelSwitcher : MonoBehaviour
     private Player _player;
     private ILevelSaver _levelSaver;
     private PlayerEvents _playerEvents;
+    public int _obstacleCount;
+    public int _obstacleReceived = 0; 
+
     [Inject]
     public void Construct(
         AudioManager audioManager,
         PlayerForce playerForce,
         UIManager uiManager,
-        ObstacleSpawner obstacleSpawner, 
+        ObstacleSpawner obstacleSpawner,
         Player player,
         ILevelSaver levelSaver,
         PlayerEvents playerEvents
-        )
+    )
     {
         _audioManager = audioManager;
         _uIManager = uiManager;
@@ -47,6 +48,7 @@ public class LevelSwitcher : MonoBehaviour
         _playerEvents = playerEvents;
     }
     
+
     private void OnEnable()
     {
         _playerEvents.OnPlayerDead += GameOver;
@@ -65,13 +67,12 @@ public class LevelSwitcher : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
-        
+
         ClearScene();
         _obstacleSpawner.StopSpawn();
         _uIManager.ShowGameplay();
         PlayLevel();
         _playerForce.ResetCurrentForce();
-
     }
 
     private void Start()
@@ -107,12 +108,11 @@ public class LevelSwitcher : MonoBehaviour
         _levelCompletePanel.SetActive(false);
         NextLevel();
     }
-    
-    
+
 
     public void NextLevel()
     {
-        if (_levels.Count-1 > _currentLevelIndex)
+        if (_levels.Count - 1 > _currentLevelIndex)
         {
             _currentLevelIndex++;
         }
@@ -120,6 +120,7 @@ public class LevelSwitcher : MonoBehaviour
         {
             _currentLevelIndex = 0;
         }
+
         OnCurrentLevelChange?.Invoke(_currentLevelIndex);
         _levelSaver.SaveLevel(_currentLevelIndex);
         PlayLevel();
@@ -129,7 +130,7 @@ public class LevelSwitcher : MonoBehaviour
     public void PlayLevel()
     {
         _obstacleSpawner.levelConfig = _levels[_currentLevelIndex];
-
+        _obstacleCount = _obstacleSpawner.levelConfig.ObstacleCount;
         _obstacleSpawner.StartSpawn();
     }
 

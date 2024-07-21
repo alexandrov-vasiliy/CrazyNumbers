@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Levels
@@ -5,6 +6,9 @@ namespace Levels
     [CreateAssetMenu(fileName = "LevelConfig", menuName = "obstacleGame/LevelConfig", order = 0)]
     public class LevelConfig : ScriptableObject
     {
+        public int ObstacleCount => obstacles.FindAll((info) => info.type == InteractableType.Obstacle).Count;
+        
+        
         [System.Serializable]
         public struct ObstacleInfo
         {
@@ -14,6 +18,6 @@ namespace Levels
             public InteractableType type;
         }
 
-        public ObstacleInfo[] obstacles;
+        public List<ObstacleInfo> obstacles;
     }
 }
