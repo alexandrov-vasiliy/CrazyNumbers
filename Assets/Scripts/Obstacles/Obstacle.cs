@@ -62,6 +62,7 @@ public class Obstacle : BaseObstacle, IInteractable
             if (_levelSwitcher._obstacleReceived == _levelSwitcher._obstacleCount)
             {
                 _levelSwitcher.StartShowLevelComplete();
+                _levelSwitcher.ClearScene(true);
                 _levelSwitcher._obstacleReceived = 0;
             }
             

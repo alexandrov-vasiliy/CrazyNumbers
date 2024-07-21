@@ -13,87 +13,83 @@ MonoBehaviour:
   m_Name: Level5
   m_EditorClassIdentifier: 
   obstacles:
-  - spawnRate: 0
+  - spawnRate: 1
     force: 1
-    gravityScale: 0.6
+    gravityScale: 1.05
     type: 0
   - spawnRate: 2
+    force: 100
+    gravityScale: 0.58
+    type: 0
+  - spawnRate: 1
     force: 2
-    gravityScale: 0.7
-    type: 1
+    gravityScale: 0.85
+    type: 0
+  - spawnRate: 2
+    force: 1
+    gravityScale: 0.78
+    type: 0
+  - spawnRate: 1
+    force: 10
+    gravityScale: 1.12
+    type: 0
   - spawnRate: 2
     force: 3
+    gravityScale: 1.1
+    type: 0
+  - spawnRate: 2
+    force: 15
+    gravityScale: 0.98
+    type: 0
+  - spawnRate: 1
+    force: 4
+    gravityScale: 0.75
+    type: 0
+  - spawnRate: 1
+    force: 65
+    gravityScale: 0.92
+    type: 0
+  - spawnRate: 1
+    force: 1
+    gravityScale: 0.55
+    type: 0
+  - spawnRate: 2
+    force: 34
     gravityScale: 0.9
     type: 0
-  - spawnRate: 0
-    force: 2
-    gravityScale: 0.6
-    type: 2
   - spawnRate: 2
-    force: 5
-    gravityScale: 0.8
+    force: 6
+    gravityScale: 0.95
     type: 0
-  - spawnRate: 0
-    force: 5
-    gravityScale: 0.6
+  - spawnRate: 2
+    force: 40
+    gravityScale: 1.05
     type: 0
   - spawnRate: 1
-    force: 2
-    gravityScale: 0.8
+    force: 25
+    gravityScale: 0.65
     type: 0
-  - spawnRate: 2
-    force: 0.5
-    gravityScale: 0.6
-    type: 1
   - spawnRate: 1
-    force: 15
-    gravityScale: 0.8
-    type: 0
-  - spawnRate: 2
-    force: 0.5
-    gravityScale: 0.6
-    type: 2
-  - spawnRate: 0
-    force: 12
+    force: 9
     gravityScale: 1
     type: 0
   - spawnRate: 2
-    force: 12
-    gravityScale: 0.8
-    type: 0
-  - spawnRate: 1
-    force: 20
-    gravityScale: 0.7
-    type: 0
-  - spawnRate: 2
-    force: 2
-    gravityScale: 2
-    type: 1
-  - spawnRate: 1
-    force: 10
-    gravityScale: 0.9
-    type: 0
-  - spawnRate: 2
-    force: 1010
-    gravityScale: 0.9
-    type: 0
-  - spawnRate: 1
-    force: 12
-    gravityScale: 0.7
-    type: 0
-  - spawnRate: 2
-    force: 2
+    force: 13
     gravityScale: 0.8
     type: 0
   - spawnRate: 2
-    force: 3
-    gravityScale: 0.7
+    force: 89
+    gravityScale: 0.88
+    type: 0
+  - spawnRate: 2
+    force: 1
+    gravityScale: 0.65
     type: 0
   - spawnRate: 1
-    force: 15
-    gravityScale: 0.6
+    force: 21
+    gravityScale: 1.15
     type: 0
   - spawnRate: 1
-    force: 110
-    gravityScale: 0.5
-    type: 3
+    force: 55
+    gravityScale: 1.2
+    type: 0

@@ -83,12 +83,17 @@ public class LevelSwitcher : MonoBehaviour
     }
 
 
-    public void ClearScene()
+    public void ClearScene(bool partialExecution=false)
     {
         GameObject[] array = GameObject.FindGameObjectsWithTag("Obstacle");
         foreach (var t in array)
         {
             t.SetActive(false);
+        }
+
+        if (partialExecution)
+        {
+            return;
         }
 
         _player.gameObject.transform.position = new Vector2(0f, -2.5f);

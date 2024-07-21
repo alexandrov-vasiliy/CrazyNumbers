@@ -435,25 +435,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 47529072c4e320741a5197f644d66811, type: 2}
   - {fileID: 11400000, guid: cd3e7c7455caee54bb00c7cb0c0908fb, type: 2}
   - {fileID: 11400000, guid: b0183bce11a1122479ad61fbb86044f5, type: 2}
-  - {fileID: 11400000, guid: 8b5199eb425269f4880fff2e021b2060, type: 2}
-  - {fileID: 11400000, guid: d0670ad0d71e00f4bb8c1c9c141c3e86, type: 2}
-  - {fileID: 11400000, guid: ddd181fb044d836469e8e40db05d90ac, type: 2}
-  - {fileID: 11400000, guid: f903b91d00edd2c44b4d3f2cafd3188d, type: 2}
-  - {fileID: 11400000, guid: bb8d0fb98b58b3e49bebaf8be9343487, type: 2}
-  - {fileID: 11400000, guid: 8389fbb3c125f5e4988d708215a351bf, type: 2}
-  - {fileID: 11400000, guid: a87e4b9663ed7734fa95c326eb863a55, type: 2}
-  - {fileID: 11400000, guid: 05ead0fad3658074fa451fa799370bb6, type: 2}
-  - {fileID: 11400000, guid: 6795ed55c4b2a1949a71be94a2a002ff, type: 2}
-  - {fileID: 11400000, guid: 580d9131df8b56f438e5c1a8367be561, type: 2}
-  - {fileID: 11400000, guid: 4a2b96a1a0ecc3840a1a12b3c3692e09, type: 2}
-  - {fileID: 11400000, guid: bdf7b7cbfac2e2f4f9ac18ad926ba5fe, type: 2}
-  - {fileID: 11400000, guid: 2fd554c7b1507814e9eac1465393f3ee, type: 2}
-  - {fileID: 11400000, guid: 80b1b222e6fe17848aab21ae7fecdb9d, type: 2}
-  - {fileID: 11400000, guid: eb323abbb93107946b9bbc3004d66e7e, type: 2}
-  - {fileID: 11400000, guid: 4bf8ebf23eb2e584ab22cb3024571d92, type: 2}
-  - {fileID: 11400000, guid: e7347ced35f425a46a8d61a5a66f967c, type: 2}
-  - {fileID: 11400000, guid: 746300d8d07154f4b80c3cbf5b42fc82, type: 2}
-  - {fileID: 11400000, guid: a42c5f8049bb5774c9e0d8f2b571dba5, type: 2}
   _currentLevelIndex: 0
   _levelCompletePanel: {fileID: 2074141560}
   _obstacleCount: 0
