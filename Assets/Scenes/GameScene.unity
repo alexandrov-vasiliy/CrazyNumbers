@@ -435,7 +435,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 47529072c4e320741a5197f644d66811, type: 2}
   - {fileID: 11400000, guid: cd3e7c7455caee54bb00c7cb0c0908fb, type: 2}
   - {fileID: 11400000, guid: b0183bce11a1122479ad61fbb86044f5, type: 2}
-  _currentLevelIndex: 0
+  _currentLevelIndex: 1
   _levelCompletePanel: {fileID: 2074141560}
   _obstacleCount: 0
   _obstacleReceived: 0
@@ -668,6 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c49aa4fb85495bb13596bdd968431b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDead: 1
 --- !u!4 &793030849
 Transform:
   m_ObjectHideFlags: 0
@@ -3433,7 +3434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 416a3ab7ff18572b68d5b15574383ed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followSpeed: 10
+  followSpeed: 20
   offsetY: 0.8
   Renderer: {fileID: 969369197}
   animationDuration: 0.2
