@@ -200,7 +200,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.35
+  m_Radius: 0.75
 --- !u!114 &-7755490238284226483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +216,7 @@ MonoBehaviour:
   _rb: {fileID: 1790602294899535570}
   NumberForce: 1
   spriteRenderer: {fileID: 8519501785274604556}
+  minMaxRangeCoef: {x: 1, y: 1.5}
   number: {fileID: 9129380530361166794}
 --- !u!1 &1835214109475658652
 GameObject:

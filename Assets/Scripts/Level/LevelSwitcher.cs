@@ -53,12 +53,31 @@ public class LevelSwitcher : MonoBehaviour
     {
         _playerEvents.OnPlayerDead += GameOver;
         _playerEvents.OnLevelComplete += StartShowLevelComplete;
+        _playerEvents.OnPlayerApplyObstacle += HandleApplyObstacle;
     }
 
     private void OnDisable()
     {
         _playerEvents.OnPlayerDead -= GameOver;
         _playerEvents.OnLevelComplete -= NextLevel;
+        _playerEvents.OnPlayerApplyObstacle -= HandleApplyObstacle;
+
+    }
+
+    private void HandleApplyObstacle(ObstacleType type)
+    {
+        
+        if (type == ObstacleType.Obstacle)
+        {
+            _obstacleReceived++;
+        }
+
+        if (_obstacleReceived == _obstacleCount)
+        {
+            StartShowLevelComplete();
+            ClearScene(true);
+            _obstacleReceived = 0;
+        }
     }
 
     public void RestartGame()
@@ -67,6 +86,7 @@ public class LevelSwitcher : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
+        _obstacleReceived = 0;
 
         ClearScene();
         _obstacleSpawner.StopSpawn();
@@ -83,7 +103,7 @@ public class LevelSwitcher : MonoBehaviour
     }
 
 
-    public void ClearScene(bool partialExecution=false)
+    public void ClearScene(bool partialExecution = false)
     {
         GameObject[] array = GameObject.FindGameObjectsWithTag("Obstacle");
         foreach (var t in array)
@@ -143,6 +163,7 @@ public class LevelSwitcher : MonoBehaviour
     {
         if (_uIManager.gameState == GameState.PLAYING)
         {
+
             _player.gameObject.SetActive(false);
             ClearScene();
             _obstacleSpawner.StopSpawn();

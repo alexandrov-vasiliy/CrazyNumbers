@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 
     private Vector2 destination;
 
-    private Color color;
+    private Color _color;
 
     private bool follow;
 
@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
         _playerEvents.OnPlayerApplyObstacle -= ApplyObstacle;
     }
 
-    private void ApplyObstacle()
+    private void ApplyObstacle(ObstacleType _)
     {
         DOTween.Sequence()
             .Append(transform.DOScale(transform.localScale * scaleMultiply, animationDuration))
@@ -73,10 +73,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void SetColor(Color _color)
+    public void SetColor(Color color)
     {
-        color = _color;
-        Renderer.color = color;
+        _color = color;
+        Renderer.color = _color;
     }
 
     private void Update()

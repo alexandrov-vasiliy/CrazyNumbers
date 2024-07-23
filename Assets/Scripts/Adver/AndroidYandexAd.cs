@@ -27,6 +27,8 @@ namespace Adver
 
         public void ShowAd()
         {
+            
+            RequestRewarded();
             rewardedAd?.Show();
         }
 

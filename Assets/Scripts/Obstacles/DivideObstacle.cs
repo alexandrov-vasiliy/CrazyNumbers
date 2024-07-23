@@ -1,5 +1,7 @@
 
 
+using System;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
@@ -7,7 +9,7 @@ public class DivideObstacle : BaseObstacle, IInteractable
 {
     
     [SerializeField] private TextMeshPro number;
-    public override void InitObstacle(Vector2 position, float force, float gravityScale,InteractableType type)
+    public override void InitObstacle(Vector2 position, float force, float gravityScale,ObstacleType type)
     {
         base.InitObstacle(position, force, gravityScale, type);
 
@@ -18,7 +20,15 @@ public class DivideObstacle : BaseObstacle, IInteractable
     public void Interact()
     {
             _playerForce.DividePlayerForce(NumberForce);
-            _playerEvents.ApplyObstacle();
+            _playerEvents.ApplyObstacle(_type);
             gameObject.SetActive(false);
+    }
+
+    private void OnCollisionEnter2D(Collision2D _)
+    {
+        spriteRenderer.DOFade(0, 2f).OnComplete(() =>
+        {
+            gameObject.SetActive(false);
+        });
     }
 }

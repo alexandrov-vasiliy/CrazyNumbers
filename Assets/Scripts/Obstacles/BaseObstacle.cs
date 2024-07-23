@@ -13,28 +13,37 @@ public class BaseObstacle : MonoBehaviour
     [Inject] protected PlayerForce _playerForce;
     [Inject] protected PlayerEvents _playerEvents;
     [Inject] private AudioManager _audioManager;
-    protected InteractableType _type;
-    
+    protected ObstacleType _type;
+
+    [SerializeField] private Vector2 minMaxRangeCoef;
     private void OnValidate()
     {
         _rb ??= GetComponent<Rigidbody2D>();
     }
     
-    public virtual void InitObstacle(Vector2 position, float force, float gravityScale, InteractableType type)
+    public virtual void InitObstacle(Vector2 position, float force, float gravityScale, ObstacleType type)
     {
         _rb.gravityScale = gravityScale;
 
         NumberForce = force;
-
+        
+        RandomizeSize();
+        
         transform.position = position;
 
         _type = type;
-        if (_type == InteractableType.Boss)
+        if (_type == ObstacleType.Boss)
         {
             int bossIndex = Random.Range(0, _audioManager.bossSpawn.Length);
             Debug.Log($"Play boss sound {bossIndex}");
             _audioManager.PlayBossSound();
         }
+    }
+
+    private void RandomizeSize()
+    {
+        transform.localScale = Vector3.one;
+        transform.localScale *= Random.Range(minMaxRangeCoef.x, minMaxRangeCoef.y);
     }
     
 }

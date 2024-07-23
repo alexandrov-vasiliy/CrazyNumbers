@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IObjectFactory
 {
-    GameObject CreateObject(InteractableType type);
+    GameObject CreateObject(ObstacleType type);
 }

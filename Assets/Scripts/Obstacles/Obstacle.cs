@@ -27,7 +27,7 @@ public class Obstacle : BaseObstacle, IInteractable
         _playerForce.OnPlayerForceUpdate -= ChangeColorFromPlayerForce;
     }
 
-    public override void InitObstacle(Vector2 position, float force, float gravityScale, InteractableType type)
+    public override void InitObstacle(Vector2 position, float force, float gravityScale, ObstacleType type)
     {
         base.InitObstacle(position, force, gravityScale, type);
         
@@ -51,20 +51,8 @@ public class Obstacle : BaseObstacle, IInteractable
         if (NumberForce <= _playerForce.Value)
         {
             _playerForce.IncrementPlayerForce(NumberForce);
-            _playerEvents.ApplyObstacle();
+            _playerEvents.ApplyObstacle(_type);
             gameObject.SetActive(false);
-
-            if (_type == InteractableType.Obstacle)
-            {
-                _levelSwitcher._obstacleReceived++;
-            }
-
-            if (_levelSwitcher._obstacleReceived == _levelSwitcher._obstacleCount)
-            {
-                _levelSwitcher.StartShowLevelComplete();
-                _levelSwitcher.ClearScene(true);
-                _levelSwitcher._obstacleReceived = 0;
-            }
             
         }
         else

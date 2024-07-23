@@ -1,4 +1,4 @@
-public enum InteractableType
+public enum ObstacleType
 {
     Obstacle,
     Multiply,

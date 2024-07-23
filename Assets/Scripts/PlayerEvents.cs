@@ -3,15 +3,17 @@ using UnityEngine;
 
 public class PlayerEvents : MonoBehaviour
 {
-    public event Action OnPlayerApplyObstacle;
+    public event Action<ObstacleType> OnPlayerApplyObstacle;
     public event Action OnPlayerDead;
     
     
     public event Action OnLevelComplete;
 
-    public void ApplyObstacle()
+    [SerializeField] private bool CanDead = false;
+
+    public void ApplyObstacle(ObstacleType type)
     {
-        OnPlayerApplyObstacle?.Invoke();
+        OnPlayerApplyObstacle?.Invoke(type);
     }
 
     public void LevelComplete()
@@ -21,6 +23,9 @@ public class PlayerEvents : MonoBehaviour
 
     public void Dead()
     {
-        OnPlayerDead?.Invoke();
+        if (CanDead)
+        {
+            OnPlayerDead?.Invoke();
+        }
     }
 }

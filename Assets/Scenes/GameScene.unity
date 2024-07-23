@@ -1465,11 +1465,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a366cfa2925415b9186fe719cf0d511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objects:
-  - {fileID: 1790602294077451984, guid: 540cf68e145a44dcb8e07d1a32c8ea9b, type: 3}
+  _object: {fileID: 1790602294077451984, guid: 540cf68e145a44dcb8e07d1a32c8ea9b, type: 3}
   _count: 15
   _pool: []
-  _usingObjects: []
 --- !u!114 &1499372254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1482,11 +1480,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958e61ae10354f4c9aab0818bfae94f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objects:
-  - {fileID: 1790602294077451984, guid: aafdd63b1cb6649e681375ee261fd046, type: 3}
+  _object: {fileID: 1790602294077451984, guid: aafdd63b1cb6649e681375ee261fd046, type: 3}
   _count: 7
   _pool: []
-  _usingObjects: []
 --- !u!114 &1499372255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1499,11 +1495,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad747e89902c480eb2d9972e0f112385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objects:
-  - {fileID: 1790602294077451984, guid: bce890af040114352a20ee3f7b746249, type: 3}
+  _object: {fileID: 1790602294077451984, guid: bce890af040114352a20ee3f7b746249, type: 3}
   _count: 7
   _pool: []
-  _usingObjects: []
 --- !u!114 &1499372256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1516,11 +1510,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 917c1a44b16b4ef6b6e76b997338f9e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objects:
-  - {fileID: 1790602294077451984, guid: 7b02dc52ef5884e2383ae452854f1773, type: 3}
+  _object: {fileID: 1790602294077451984, guid: 7b02dc52ef5884e2383ae452854f1773, type: 3}
   _count: 2
   _pool: []
-  _usingObjects: []
 --- !u!1 &1545935935
 GameObject:
   m_ObjectHideFlags: 0

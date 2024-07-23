@@ -71,7 +71,7 @@ public class ObstacleSpawner : MonoBehaviour
 
         Vector2 spawnPosition = new Vector2(spawnPositionX, spawnPositionY);
 
-        if (obstacleInfo.type == InteractableType.Boss)
+        if (obstacleInfo.type == ObstacleType.Boss)
         {
             float centerX = _camera.ScreenToWorldPoint(new Vector3(Screen.width / 2, 0, 0)).x;
 
