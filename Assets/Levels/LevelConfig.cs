@@ -7,7 +7,8 @@ namespace Levels
     public class LevelConfig : ScriptableObject
     {
         public int ObstacleCount => obstacles.FindAll((info) => info.type == ObstacleType.Obstacle).Count;
-        
+
+        public LevelType typeLevel;
         
         [System.Serializable]
         public struct ObstacleInfo
@@ -19,5 +20,8 @@ namespace Levels
         }
 
         public List<ObstacleInfo> obstacles;
+        
+        
+        
     }
 }

@@ -26,8 +26,10 @@ public class BaseObstacle : MonoBehaviour
         _rb.gravityScale = gravityScale;
 
         NumberForce = force;
-        
-        RandomizeSize();
+        if (type != ObstacleType.Boss)
+        {
+            RandomizeSize();
+        }
         
         transform.position = position;
 

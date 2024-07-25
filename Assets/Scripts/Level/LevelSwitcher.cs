@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Level;
 using Levels;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 public class LevelSwitcher : MonoBehaviour
@@ -12,9 +13,11 @@ public class LevelSwitcher : MonoBehaviour
 
     [SerializeField] private int _currentLevelIndex = 0;
     public int CurrentLevelIndex => _currentLevelIndex;
+    private int _previousLevelIndex;
 
     [SerializeField] private GameObject _levelCompletePanel;
-
+    [SerializeField] private GameObject _borders;
+    [SerializeField] private GameObject _killZone;
 
     public Action<int> OnCurrentLevelChange;
 
@@ -26,7 +29,7 @@ public class LevelSwitcher : MonoBehaviour
     private ILevelSaver _levelSaver;
     private PlayerEvents _playerEvents;
     public int _obstacleCount;
-    public int _obstacleReceived = 0; 
+    public int _obstacleReceived = 0;
 
     [Inject]
     public void Construct(
@@ -47,12 +50,17 @@ public class LevelSwitcher : MonoBehaviour
         _levelSaver = levelSaver;
         _playerEvents = playerEvents;
     }
-    
 
     private void OnEnable()
     {
         _playerEvents.OnPlayerDead += GameOver;
         _playerEvents.OnLevelComplete += StartShowLevelComplete;
+
+        if (_obstacleSpawner.levelConfig.typeLevel == LevelType.BossLevel)
+        {
+            return;
+        }
+        
         _playerEvents.OnPlayerApplyObstacle += HandleApplyObstacle;
     }
 
@@ -60,13 +68,17 @@ public class LevelSwitcher : MonoBehaviour
     {
         _playerEvents.OnPlayerDead -= GameOver;
         _playerEvents.OnLevelComplete -= NextLevel;
+        
+        if (_obstacleSpawner.levelConfig.typeLevel == LevelType.BossLevel)
+        {
+            return;
+        }
+        
         _playerEvents.OnPlayerApplyObstacle -= HandleApplyObstacle;
-
     }
 
     private void HandleApplyObstacle(ObstacleType type)
     {
-        
         if (type == ObstacleType.Obstacle)
         {
             _obstacleReceived++;
@@ -80,12 +92,28 @@ public class LevelSwitcher : MonoBehaviour
         }
     }
 
+    private void ChangeLevelType(LevelType type)
+    {
+        if (type == LevelType.BossLevel)
+        {
+            _borders.SetActive(false);
+            _killZone.SetActive(true);
+        }
+        else if (type == LevelType.MergeLevel)
+        {
+            _borders.SetActive(true);
+            _killZone.SetActive(false);
+        }
+
+    }
+
     public void RestartGame()
     {
         if (_uIManager.gameState == GameState.PAUSED)
         {
             Time.timeScale = 1f;
         }
+
         _obstacleReceived = 0;
 
         ClearScene();
@@ -155,6 +183,7 @@ public class LevelSwitcher : MonoBehaviour
     public void PlayLevel()
     {
         _obstacleSpawner.levelConfig = _levels[_currentLevelIndex];
+        ChangeLevelType(_obstacleSpawner.levelConfig.typeLevel);
         _obstacleCount = _obstacleSpawner.levelConfig.ObstacleCount;
         _obstacleSpawner.StartSpawn();
     }
@@ -163,7 +192,6 @@ public class LevelSwitcher : MonoBehaviour
     {
         if (_uIManager.gameState == GameState.PLAYING)
         {
-
             _player.gameObject.SetActive(false);
             ClearScene();
             _obstacleSpawner.StopSpawn();

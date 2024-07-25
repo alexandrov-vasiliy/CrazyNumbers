@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7c8bbf442b47dc96ae5b842404f473, type: 3}
   m_Name: Level6
   m_EditorClassIdentifier: 
+  typeLevel: 1
   obstacles:
   - spawnRate: 1
     force: 2

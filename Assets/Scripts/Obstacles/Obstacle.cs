@@ -48,11 +48,18 @@ public class Obstacle : BaseObstacle, IInteractable
 
     public void Interact()
     {
+        
         if (NumberForce <= _playerForce.Value)
         {
             _playerForce.IncrementPlayerForce(NumberForce);
             _playerEvents.ApplyObstacle(_type);
             gameObject.SetActive(false);
+            
+            if (_type == ObstacleType.Boss)
+            {
+                _playerEvents.LevelComplete();
+            }
+            
             
         }
         else
