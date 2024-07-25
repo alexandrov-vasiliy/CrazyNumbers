@@ -14,6 +14,8 @@ public class ObstacleSpawner : MonoBehaviour
 
     public UnityEvent OnLevelComplete = new UnityEvent();
 
+    [SerializeField] private float spawnRateCoef = 0.1f;
+
     [Inject] private UIManager _uiManager;
 
     private void Start()
@@ -54,7 +56,7 @@ public class ObstacleSpawner : MonoBehaviour
                 obstacleScript.InitObstacle(spawnPosition, obstacleInfo.force, obstacleInfo.gravityScale, obstacleInfo.type);
             }
 
-            yield return new WaitForSeconds(obstacleInfo.spawnRate);
+            yield return new WaitForSeconds(obstacleInfo.spawnRate + spawnRateCoef);
         }
 
         Debug.Log("Level Complete");

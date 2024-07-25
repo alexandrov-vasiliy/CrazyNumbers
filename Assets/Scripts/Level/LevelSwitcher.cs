@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Analytics;
 using Level;
 using Levels;
 using UnityEngine;
@@ -28,6 +29,8 @@ public class LevelSwitcher : MonoBehaviour
     private Player _player;
     private ILevelSaver _levelSaver;
     private PlayerEvents _playerEvents;
+    private IAnalytics _analytics;
+    
     public int _obstacleCount;
     public int _obstacleReceived = 0;
 
@@ -39,7 +42,8 @@ public class LevelSwitcher : MonoBehaviour
         ObstacleSpawner obstacleSpawner,
         Player player,
         ILevelSaver levelSaver,
-        PlayerEvents playerEvents
+        PlayerEvents playerEvents,
+        IAnalytics analytics
     )
     {
         _audioManager = audioManager;
@@ -49,6 +53,7 @@ public class LevelSwitcher : MonoBehaviour
         _player = player;
         _levelSaver = levelSaver;
         _playerEvents = playerEvents;
+        _analytics = analytics;
     }
 
     private void OnEnable()
@@ -178,6 +183,7 @@ public class LevelSwitcher : MonoBehaviour
         _levelSaver.SaveLevel(_currentLevelIndex);
         PlayLevel();
         _playerForce.ResetCurrentForce();
+        _analytics.SendGoal("LEVEL_COMPLETE ", _currentLevelIndex + 1);
     }
 
     public void PlayLevel()

@@ -1,11 +1,8 @@
-
-
-using System;
-using DG.Tweening;
+using Obstacles;
 using TMPro;
 using UnityEngine;
 
-public class DivideObstacle : BaseObstacle, IInteractable
+public class DivideObstacle : BonusObstacle, IInteractable
 {
     
     [SerializeField] private TextMeshPro number;
@@ -24,11 +21,5 @@ public class DivideObstacle : BaseObstacle, IInteractable
             gameObject.SetActive(false);
     }
 
-    private void OnCollisionEnter2D(Collision2D _)
-    {
-        spriteRenderer.DOFade(0, 2f).OnComplete(() =>
-        {
-            gameObject.SetActive(false);
-        });
-    }
+    
 }

@@ -217,6 +217,11 @@ MonoBehaviour:
   NumberForce: 1
   spriteRenderer: {fileID: 8519501785274604556}
   minMaxRangeCoef: {x: 1, y: 1.5}
+  blinkCount: 4
+  blinkDuration: 1
+  scaleMultiplier: 1.5
+  blinkFadeValue: 0.7
+  finalFadeDuration: 6
   number: {fileID: 9129380530361166794}
 --- !u!1 &1835214109475658652
 GameObject:

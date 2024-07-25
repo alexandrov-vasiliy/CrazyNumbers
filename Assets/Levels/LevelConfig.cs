@@ -18,7 +18,7 @@ namespace Levels
             public float gravityScale;
             public ObstacleType type;
         }
-
+        
         public List<ObstacleInfo> obstacles;
         
         
