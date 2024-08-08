@@ -1,0 +1,192 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f7c8bbf442b47dc96ae5b842404f473, type: 3}
+  m_Name: Level11
+  m_EditorClassIdentifier: 
+  typeLevel: 1
+  obstacles:
+  - spawnRate: 0.3
+    force: 1000
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 123
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 345
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 500
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 443
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 786
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 1
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 2
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 3
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 987
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 567
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 654
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 66
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 4
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 99
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 789
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 100
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 300
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 67
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 34
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 2
+    gravityScale: 1
+    type: 1
+  - spawnRate: 0.3
+    force: 5
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 1.5
+    gravityScale: 1
+    type: 1
+  - spawnRate: 0.3
+    force: 8
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 9
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 0.5
+    gravityScale: 1
+    type: 1
+  - spawnRate: 0.3
+    force: 10
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 3
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 5
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 3
+    gravityScale: 1
+    type: 1
+  - spawnRate: 0.3
+    force: 2
+    gravityScale: 1
+    type: 2
+  - spawnRate: 0.3
+    force: 6
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 7
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 9
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 10
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 23
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 43
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 70
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 94
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 67
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 999
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 23
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 20
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 40
+    gravityScale: 1
+    type: 0
