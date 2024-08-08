@@ -14,83 +14,163 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeLevel: 1
   obstacles:
-  - spawnRate: 1
-    force: 2
-    gravityScale: 0.85
-    type: 0
-  - spawnRate: 2
-    force: 1
-    gravityScale: 0.95
-    type: 0
-  - spawnRate: 1
-    force: 1
-    gravityScale: 0.6
-    type: 0
-  - spawnRate: 1
-    force: 2
-    gravityScale: 0.7
-    type: 0
-  - spawnRate: 2
-    force: 7
-    gravityScale: 0.9
-    type: 0
-  - spawnRate: 1
-    force: 1
-    gravityScale: 1.1
-    type: 0
-  - spawnRate: 1
-    force: 4
-    gravityScale: 0.55
-    type: 0
-  - spawnRate: 1
-    force: 11
-    gravityScale: 1.15
-    type: 0
-  - spawnRate: 1
-    force: 29
+  - spawnRate: 0.3
+    force: 70
     gravityScale: 1
     type: 0
-  - spawnRate: 2
-    force: 3
-    gravityScale: 0.6
+  - spawnRate: 0.3
+    force: 30
+    gravityScale: 1
     type: 0
-  - spawnRate: 2
-    force: 3
-    gravityScale: 0.75
-    type: 0
-  - spawnRate: 2
-    force: 8
-    gravityScale: 0.85
-    type: 0
-  - spawnRate: 2
-    force: 18
-    gravityScale: 0.65
-    type: 0
-  - spawnRate: 2
-    force: 47
-    gravityScale: 1.05
-    type: 0
-  - spawnRate: 1
-    force: 13
-    gravityScale: 0.75
-    type: 0
-  - spawnRate: 1
-    force: 76
-    gravityScale: 0.7
-    type: 0
-  - spawnRate: 2
-    force: 1
-    gravityScale: 1.2
-    type: 0
-  - spawnRate: 1
-    force: 2
-    gravityScale: 0.8
-    type: 0
-  - spawnRate: 2
+  - spawnRate: 0.3
     force: 21
-    gravityScale: 0.65
+    gravityScale: 1
     type: 0
-  - spawnRate: 1
+  - spawnRate: 0.3
+    force: 10
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
     force: 5
-    gravityScale: 0.95
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 1
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 2
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 2
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 1
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 8
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 9
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 10
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 200
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 789
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 344
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 111
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 50
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 5000
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 3000
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 2000
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 2012
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 2111
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 3333
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 5555
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 6666
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 7894
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 1000
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 500
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 899
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 1000
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 1200
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 2000
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 5000
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 0
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 12
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 21
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 10000
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 23
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 43
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 67
+    gravityScale: 1
     type: 0

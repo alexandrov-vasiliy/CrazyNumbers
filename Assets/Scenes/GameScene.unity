@@ -431,12 +431,12 @@ MonoBehaviour:
   _levels:
   - {fileID: 11400000, guid: f861c9d439aa7463f8ae6cd1addb43ee, type: 2}
   - {fileID: 11400000, guid: 2dfe6726eda304a45a876badbba23e15, type: 2}
-  - {fileID: 11400000, guid: 3164dea219aa98a45b52fb6898a2fb81, type: 2}
   - {fileID: 11400000, guid: 47529072c4e320741a5197f644d66811, type: 2}
+  - {fileID: 11400000, guid: 3164dea219aa98a45b52fb6898a2fb81, type: 2}
   - {fileID: 11400000, guid: cd3e7c7455caee54bb00c7cb0c0908fb, type: 2}
   - {fileID: 11400000, guid: b0183bce11a1122479ad61fbb86044f5, type: 2}
   - {fileID: 11400000, guid: 8ed82c357ee56c6409ce96079c13a7c1, type: 2}
-  _currentLevelIndex: 1
+  _currentLevelIndex: 6
   _levelCompletePanel: {fileID: 2074141560}
   _borders: {fileID: 1575448045}
   _killZone: {fileID: 1540656219}
@@ -1672,8 +1672,8 @@ Transform:
   m_GameObject: {fileID: 1540656219}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5015, y: -13.0466, z: 0}
-  m_LocalScale: {x: 20.509466, y: 5.4732, z: 1}
+  m_LocalPosition: {x: 0.5015, y: -17.7997, z: 0}
+  m_LocalScale: {x: 20, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
