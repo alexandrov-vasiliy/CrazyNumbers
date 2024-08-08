@@ -436,6 +436,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cd3e7c7455caee54bb00c7cb0c0908fb, type: 2}
   - {fileID: 11400000, guid: b0183bce11a1122479ad61fbb86044f5, type: 2}
   - {fileID: 11400000, guid: 8ed82c357ee56c6409ce96079c13a7c1, type: 2}
+  - {fileID: 11400000, guid: 3d0c098ad49f8f44b956fe1762cd9b1d, type: 2}
+  - {fileID: 11400000, guid: d8a1df31f3c64814ea5f56ebc3042bd9, type: 2}
+  - {fileID: 11400000, guid: 1e51b02fb66cfbb43b81ec72e752a858, type: 2}
+  - {fileID: 11400000, guid: 7c34e47f734a00d41ba45d438d5b6762, type: 2}
+  - {fileID: 11400000, guid: 7f41c28e3953c45498358c80a25ae4f2, type: 2}
+  - {fileID: 11400000, guid: 3211d88c18212a343b3282a6e56219cd, type: 2}
   _currentLevelIndex: 6
   _levelCompletePanel: {fileID: 2074141560}
   _borders: {fileID: 1575448045}
