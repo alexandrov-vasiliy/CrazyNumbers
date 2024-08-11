@@ -9,7 +9,7 @@ using Zenject;
 
 public class LevelSwitcher : MonoBehaviour
 {
-    [SerializeField] private List<LevelConfig> _levels;
+    [SerializeField] public List<LevelConfig> _levels;
 
     [SerializeField] private int _currentLevelIndex = 0;
     public int CurrentLevelIndex => _currentLevelIndex;
@@ -28,6 +28,8 @@ public class LevelSwitcher : MonoBehaviour
     private Player _player;
     private ILevelSaver _levelSaver;
     private PlayerEvents _playerEvents;
+    
+
     public int _obstacleCount;
     public int _obstacleReceived = 0;
 
@@ -53,6 +55,7 @@ public class LevelSwitcher : MonoBehaviour
 
     private void OnEnable()
     {
+        _playerEvents.CanDead = true;
         _playerEvents.OnPlayerDead += GameOver;
         _playerEvents.OnLevelComplete += StartShowLevelComplete;
 
@@ -130,7 +133,21 @@ public class LevelSwitcher : MonoBehaviour
         Debug.Log($"level sfitcher get level {_currentLevelIndex}");
     }
 
+    public void Respawn()
+    {
+        _uIManager.ShowGameplay();
+        _playerEvents.CanDead = false;
+        Time.timeScale = 1;
+        StartCoroutine(Immortality());
+    }
 
+    private IEnumerator Immortality()
+    {
+        yield return new WaitForSeconds(2);
+        _playerEvents.CanDead = true;
+        yield break;
+    }
+    
     public void ClearScene(bool partialExecution = false)
     {
         GameObject[] array = GameObject.FindGameObjectsWithTag("Obstacle");
@@ -193,8 +210,7 @@ public class LevelSwitcher : MonoBehaviour
         if (_uIManager.gameState == GameState.PLAYING)
         {
             _player.gameObject.SetActive(false);
-            ClearScene();
-            _obstacleSpawner.StopSpawn();
+            Time.timeScale = 0;
             _audioManager.PlayEffects(_audioManager.gameOver);
             _uIManager.ShowGameOver();
             _playerForce.UpdateScoreGameover();

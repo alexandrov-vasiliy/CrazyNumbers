@@ -14,20 +14,34 @@ public class SkipLevelView : MonoBehaviour
         _ad.ShowAd();
     }
 
+    private void RewRealise()
+    {
+        if (_levelSwitcher._levels[_levelSwitcher.CurrentLevelIndex].typeLevel == LevelType.BossLevel)
+        {
+            SkipLevel();
+        }
+        else
+        {
+            _levelSwitcher.Respawn();
+        }
+    }
+
     private void SkipLevel()
     {
-        _uiManager.ShowGameplay();
+        _levelSwitcher.ClearScene();
+        Time.timeScale = 1;
         _levelSwitcher.NextLevel();
+        _uiManager.ShowGameplay();
         
     }
 
     private void OnEnable()
     {
-        _ad.OnRewarded += SkipLevel;
+        _ad.OnRewarded += RewRealise;
     }
 
     private void OnDisable()
     {
-        _ad.OnRewarded -= SkipLevel;
+        _ad.OnRewarded -= RewRealise;
     }
 }

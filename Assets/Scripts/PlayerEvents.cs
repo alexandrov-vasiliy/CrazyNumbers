@@ -7,7 +7,7 @@ public class PlayerEvents : MonoBehaviour
     public event Action OnPlayerDead;
     public event Action OnLevelComplete;
 
-    [SerializeField] private bool CanDead = false;
+    [SerializeField] public bool CanDead = false;
 
     public void ApplyObstacle(ObstacleType type)
     {
