@@ -145,7 +145,21 @@ public class LevelSwitcher : MonoBehaviour
         Debug.Log($"level sfitcher get level {_currentLevelIndex}");
     }
 
+    public void Respawn()
+    {
+        _uIManager.ShowGameplay();
+        _playerEvents.CanDead = false;
+        Time.timeScale = 1;
+        StartCoroutine(Immortality());
+    }
 
+    private IEnumerator Immortality()
+    {
+        yield return new WaitForSeconds(2);
+        _playerEvents.CanDead = true;
+        yield break;
+    }
+    
     public void ClearScene(bool partialExecution = false)
     {
         GameObject[] array = GameObject.FindGameObjectsWithTag("Obstacle");
@@ -232,8 +246,7 @@ public class LevelSwitcher : MonoBehaviour
         if (_uIManager.gameState == GameState.PLAYING)
         {
             _player.gameObject.SetActive(false);
-            ClearScene();
-            _obstacleSpawner.StopSpawn();
+            Time.timeScale = 0;
             _audioManager.PlayEffects(_audioManager.gameOver);
             _uIManager.ShowGameOver();
             _playerForce.UpdateScoreGameover();

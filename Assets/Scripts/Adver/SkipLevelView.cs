@@ -9,25 +9,42 @@ public class SkipLevelView : MonoBehaviour
     [Inject] private LevelSwitcher _levelSwitcher;
     [Inject] private UIManager _uiManager;
     [Inject] private IAnalytics _analytics;
+    
     public void SkipLevelClick()
     {
         _ad.ShowAd();
     }
 
+    private void RewRealise()
+    {
+        if (_levelSwitcher.CurrentLevel.typeLevel == LevelType.BossLevel)
+        {
+            SkipLevel();
+        }
+        else
+        {
+            _levelSwitcher.Respawn();
+        }
+        
+        _analytics.WatchReward();
+    }
+
     private void SkipLevel()
     {
-        _uiManager.ShowGameplay();
+        _levelSwitcher.ClearScene();
+        Time.timeScale = 1;
         _levelSwitcher.NextLevel();
-        _analytics.WatchReward();
+        _uiManager.ShowGameplay();
+        
     }
 
     private void OnEnable()
     {
-        _ad.OnRewarded += SkipLevel;
+        _ad.OnRewarded += RewRealise;
     }
 
     private void OnDisable()
     {
-        _ad.OnRewarded -= SkipLevel;
+        _ad.OnRewarded -= RewRealise;
     }
 }
