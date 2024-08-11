@@ -164,7 +164,8 @@ PlayerSettings:
   androidMinAspectRatio: 1
   applicationIdentifier:
     Android: com.Alexandrov.CrazyNumbers
-    Standalone: com.DefaultCompany.CrazyNumbers
+    Standalone: com.Alexandrov.CrazyNumbers
+    iPhone: com.Alexandrov.CrazyNumbers
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -763,7 +764,7 @@ PlayerSettings:
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
-  webGLDecompressionFallback: 0
+  webGLDecompressionFallback: 1
   webGLInitialMemorySize: 32
   webGLMaximumMemorySize: 2048
   webGLMemoryGrowthMode: 2

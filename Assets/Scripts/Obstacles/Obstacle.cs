@@ -3,14 +3,18 @@ using TMPro;
 using UnityEngine;
 using Zenject;
 
+[Serializable]
+public struct ColorThreshold
+{
+    public Color color;
+    public float threshold;
+}
 
 public class Obstacle : BaseObstacle, IInteractable
 {
-    public Color color;
     public TextMeshPro number;
-
-    [SerializeField] private Color ApplyColor;
-    [SerializeField] private Color DangerColor;
+    
+    [SerializeField] private ColorThreshold[] colorThresholds;
     
     [Inject]
     private LevelSwitcher _levelSwitcher;
@@ -42,7 +46,18 @@ public class Obstacle : BaseObstacle, IInteractable
 
     private void ChangeColorFromPlayerForce(int playerForce)
     {
-        color = playerForce >= NumberForce ? ApplyColor : DangerColor;
+        float difference = Mathf.Clamp((NumberForce - playerForce) / 100f * 100f, -100, 100);
+    
+        // Итерируем по массиву порогов и выбираем соответствующий цвет
+        Color color = Color.red;
+        foreach (var colorThreshold in colorThresholds)
+        {
+            if (difference <= colorThreshold.threshold)
+            {
+                color = colorThreshold.color;
+            }
+        }
+
         spriteRenderer.color = color;
     }
 
@@ -59,8 +74,6 @@ public class Obstacle : BaseObstacle, IInteractable
             {
                 _playerEvents.LevelComplete();
             }
-            
-            
         }
         else
         {

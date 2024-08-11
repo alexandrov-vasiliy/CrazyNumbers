@@ -2,6 +2,7 @@
 using Adver;
 using Analytics;
 using Level;
+using Localization;
 using UnityEngine.Rendering;
 using Zenject;
 
@@ -19,5 +20,6 @@ public class GameInstaller : MonoInstaller
         Container.Bind<ILevelSaver>().To<FakeLevelSaver>().FromNew().AsSingle();
         Container.BindInterfacesAndSelfTo<AndroidYandexAd>().AsSingle();
         Container.Bind<IAnalytics>().To<GamePushAnalytics>().FromNew().AsSingle().NonLazy();
+        Container.Bind<ILocalization>().To<YGLocalization>().AsSingle().NonLazy();
     }
 }

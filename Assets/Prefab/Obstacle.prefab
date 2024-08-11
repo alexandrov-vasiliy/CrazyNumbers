@@ -219,8 +219,23 @@ MonoBehaviour:
   minMaxRangeCoef: {x: 1, y: 1.5}
   color: {r: 0, g: 0, b: 0, a: 0}
   number: {fileID: 9129380530361166794}
-  ApplyColor: {r: 0.17428304, g: 0.735849, b: 0.1492524, a: 1}
-  DangerColor: {r: 0.6981132, g: 0.11525452, b: 0.11525452, a: 1}
+  colorThresholds:
+  - color: {r: 0.5566038, g: 0.002625496, b: 0.002625496, a: 1}
+    threshold: 100
+  - color: {r: 0.7735849, g: 0.09122462, b: 0.09122462, a: 1}
+    threshold: 50
+  - color: {r: 0.9528302, g: 0.29214135, b: 0.29214135, a: 1}
+    threshold: 20
+  - color: {r: 0.08764241, g: 0.49056602, b: 0.030081892, a: 1}
+    threshold: 0
+  - color: {r: 0.10321739, g: 0.6226415, b: 0.026432883, a: 1}
+    threshold: -20
+  - color: {r: 0.30469835, g: 0.754717, b: 0.23851903, a: 1}
+    threshold: -50
+  - color: {r: 0.52016646, g: 0.9716981, b: 0.45376468, a: 1}
+    threshold: -100
+  ApplyColor: {r: 0.023524372, g: 0.5283019, b: 0.002491996, a: 1}
+  DangerColor: {r: 0.5188679, g: 0, b: 0, a: 1}
 --- !u!1 &1835214109475658652
 GameObject:
   m_ObjectHideFlags: 0

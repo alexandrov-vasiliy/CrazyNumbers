@@ -1,23 +1,42 @@
+using System;
 using UnityEngine;
 
 public class SideLine : MonoBehaviour
 {
-    public BorderLine borderLine;
+    [SerializeField] private BorderLine borderLine;
+    [SerializeField] private float offset;
+
+    [SerializeField] private Camera camera;
+
+    private void Awake()
+    {
+        camera = Camera.main;
+    }
 
     private void Start()
     {
-        Vector3 vector = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0f));
+        SetLinePosition();
+    }
+    
+
+    private void SetLinePosition()
+    {
+        Vector3 vector = camera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0f));
+
+        Vector3 sidePosition = Vector3.zero;
         if (borderLine == BorderLine.LEFT)
         {
-            transform.position = new Vector3(0f - vector.x - 0.1f, 0f, 0f);
+            sidePosition = new Vector3(0f - vector.x - offset, 0f, 0f);
         }
         else if (borderLine == BorderLine.RIGHT)
         {
-            transform.position = new Vector3(vector.x + 0.1f, 0f, 0f);
+            sidePosition  = new Vector3(vector.x + offset, 0f, 0f);
         }
         else if (borderLine == BorderLine.BOTTOM)
         {
-            transform.position = new Vector3(0f, 0f - vector.y, 0f);
+            sidePosition = new Vector3(0f, offset - vector.y, 0f);
         }
+        
+        transform.position = sidePosition;
     }
 }

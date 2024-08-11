@@ -5,19 +5,20 @@ namespace Analytics
 {
     public class GamePushAnalytics : IAnalytics, IInitializable
     {
-        public void SendGoal(string goalName, string goalValue)
-        {
-            GP_Analytics.Goal(goalName, goalValue);
-        }
-
-        public void SendGoal(string goalName, int goalValue)
-        {
-            GP_Analytics.Goal(goalName, goalValue);
-        }
-
         public async void Initialize()
         {
             await GP_Init.Ready;
+        }
+
+        public void CompleteLevel(int level)
+        {
+            GP_Analytics.Goal("Level Complete", level);
+        }
+
+        public void WatchReward()
+        {
+            GP_Analytics.Hit("Watch Reward");
+
         }
     }
 }
