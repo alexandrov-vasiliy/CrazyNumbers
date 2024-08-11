@@ -9,7 +9,7 @@ public class PlayerEvents : MonoBehaviour
     
         public event Action<bool> CanDeadChange;
 
-        private bool _canDead = false;
+        [SerializeField] private bool _canDead = true;
 
         public bool CanDead
         {
