@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Renderer.DOFade(0.4f, 0.2f);
+            Renderer.DOFade(0.7f, 0.2f);
         }
     }
 

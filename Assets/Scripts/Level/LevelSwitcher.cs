@@ -23,11 +23,12 @@ public class LevelSwitcher : MonoBehaviour
     [SerializeField] private GameObject _levelCompletePanel;
     [SerializeField] private GameObject _borders;
     [SerializeField] private GameObject _killZone;
-    
-    [Header("CompleteLevel")]
-    [SerializeField, Range(1f, 5f)] private float _completeLevelDelay = 2f;
+
+    [Header("CompleteLevel")] [SerializeField, Range(1f, 5f)]
+    private float _completeLevelDelay = 2f;
+
     [SerializeField] private ParticleSystem[] _completeLevelParticles;
-    
+
     private int _previousLevelIndex;
     private AudioManager _audioManager;
     private UIManager _uIManager;
@@ -124,10 +125,7 @@ public class LevelSwitcher : MonoBehaviour
 
     public void RestartGame()
     {
-        if (_uIManager.gameState == GameState.PAUSED)
-        {
-            Time.timeScale = 1f;
-        }
+        Time.timeScale = 1f;
 
         _obstacleReceived = 0;
 
@@ -159,7 +157,7 @@ public class LevelSwitcher : MonoBehaviour
         _playerEvents.CanDead = true;
         yield break;
     }
-    
+
     public void ClearScene(bool partialExecution = false)
     {
         GameObject[] array = GameObject.FindGameObjectsWithTag("Obstacle");
@@ -192,7 +190,7 @@ public class LevelSwitcher : MonoBehaviour
             particle.gameObject.SetActive(true);
             particle.Play();
         }
-        
+
         yield return new WaitForSeconds(_completeLevelDelay);
         _levelCompletePanel.SetActive(false);
         NextLevel();
@@ -221,10 +219,10 @@ public class LevelSwitcher : MonoBehaviour
     {
         ChangeLevelType(CurrentLevel.typeLevel);
         _obstacleCount = CurrentLevel.ObstacleCount;
-        
+
         _obstacleSpawner.levelConfig = CurrentLevel;
         _obstacleSpawner.StartSpawn();
-        
+
         SetTutorialText();
     }
 
@@ -248,7 +246,6 @@ public class LevelSwitcher : MonoBehaviour
             Time.timeScale = 0;
             _audioManager.PlayEffects(_audioManager.gameOver);
             _uIManager.ShowGameOver();
-            _playerForce.UpdateScoreGameover();
         }
     }
 }
