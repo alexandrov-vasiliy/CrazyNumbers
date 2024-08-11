@@ -6,22 +6,20 @@ using Zenject;
 
 public class Player : MonoBehaviour
 {
-    [Header("Movement")]
-    public float followSpeed = 2f;
+    [Header("Movement")] public float followSpeed = 2f;
 
     public float offsetY = 0.8f;
 
     public SpriteRenderer Renderer;
-    
-    [Header("Destination")]
-    public float offsetMinX = 0f;
+
+    [Header("Destination")] public float offsetMinX = 0f;
     public float offsetMaxX = 0f;
     public float offsetMinY = 0f;
     public float offsetMaxY = 0f;
 
-    
-    [Header("Animation")]
-    [SerializeField, Range(0f, 1f)] private float animationDuration = 0.2f;
+
+    [Header("Animation")] [SerializeField, Range(0f, 1f)]
+    private float animationDuration = 0.2f;
 
     [FormerlySerializedAs("scaleMultiplyer")] [SerializeField]
     private float scaleMultiply = 1.2f;
@@ -38,7 +36,8 @@ public class Player : MonoBehaviour
     private UIManager _uiManager;
 
     [Inject]
-    public void Construct(AudioManager audioManager, PlayerForce playerForce, PlayerEvents playerEvents, UIManager uiManager)
+    public void Construct(AudioManager audioManager, PlayerForce playerForce, PlayerEvents playerEvents,
+        UIManager uiManager)
     {
         _audioManager = audioManager;
         _playerForce = playerForce;
@@ -49,6 +48,19 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {
         _playerEvents.OnPlayerApplyObstacle += ApplyObstacle;
+        _playerEvents.CanDeadChange += OnCanDeadChange;
+    }
+
+    private void OnCanDeadChange(bool canDead)
+    {
+        if (canDead)
+        {
+            Renderer.DOFade(1, 0.2f);
+        }
+        else
+        {
+            Renderer.DOFade(0.4f, 0.2f);
+        }
     }
 
     private void OnDisable()
@@ -64,7 +76,7 @@ public class Player : MonoBehaviour
 
         _audioManager.PlayEffects(_audioManager.sameColor);
     }
-    
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

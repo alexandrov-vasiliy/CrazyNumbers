@@ -6,8 +6,23 @@ public class PlayerEvents : MonoBehaviour
     public event Action<ObstacleType> OnPlayerApplyObstacle;
     public event Action OnPlayerDead;
     public event Action OnLevelComplete;
+    
+        public event Action<bool> CanDeadChange;
 
-    [SerializeField] public bool CanDead = false;
+        private bool _canDead = false;
+
+        public bool CanDead
+        {
+            get
+            {
+                return _canDead;
+            }
+            set
+            {
+                _canDead = value;
+                CanDeadChange?.Invoke(value);
+            } 
+        }
 
     public void ApplyObstacle(ObstacleType type)
     {
@@ -22,7 +37,7 @@ public class PlayerEvents : MonoBehaviour
 
     public void Dead()
     {
-        if (CanDead)
+        if (_canDead)
         {
             OnPlayerDead?.Invoke();
         }

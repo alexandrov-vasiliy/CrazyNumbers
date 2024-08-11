@@ -245,7 +245,6 @@ public class LevelSwitcher : MonoBehaviour
     {
         if (_uIManager.gameState == GameState.PLAYING)
         {
-            _player.gameObject.SetActive(false);
             Time.timeScale = 0;
             _audioManager.PlayEffects(_audioManager.gameOver);
             _uIManager.ShowGameOver();
