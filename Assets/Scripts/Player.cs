@@ -106,33 +106,34 @@ public class Player : MonoBehaviour
             follow = true;
         }
 
-        if (_uiManager.gameState == GameState.PLAYING && !_uiManager.IsButton())
+        if (_uiManager.gameState != GameState.PLAYING) return;
+        
+        if (Input.GetMouseButton(0) && follow)
         {
-            if (Input.GetMouseButton(0) && follow)
-            {
-                Vector3 destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                destination = new Vector2(destination.x, destination.y + offsetY);
+            if(_uiManager.IsButton()) return;
+            
+            Vector3 destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            destination = new Vector2(destination.x, destination.y + offsetY);
 
-                // Получаем границы камеры в мировых единицах с учетом смещения
-                float minX = Camera.main.ViewportToWorldPoint(new Vector2(0, 0)).x + offsetMinX;
-                float maxX = Camera.main.ViewportToWorldPoint(new Vector2(1, 0)).x - offsetMaxX;
-                float minY = Camera.main.ViewportToWorldPoint(new Vector2(0, 0)).y + offsetMinY;
-                float maxY = Camera.main.ViewportToWorldPoint(new Vector2(0, 1)).y - offsetMaxY;
+            // Получаем границы камеры в мировых единицах с учетом смещения
+            float minX = Camera.main.ViewportToWorldPoint(new Vector2(0, 0)).x + offsetMinX;
+            float maxX = Camera.main.ViewportToWorldPoint(new Vector2(1, 0)).x - offsetMaxX;
+            float minY = Camera.main.ViewportToWorldPoint(new Vector2(0, 0)).y + offsetMinY;
+            float maxY = Camera.main.ViewportToWorldPoint(new Vector2(0, 1)).y - offsetMaxY;
 
-                // Ограничиваем destination, чтобы игрок не выходил за пределы экрана
-                float clampedX = Mathf.Clamp(destination.x, minX, maxX);
-                float clampedY = Mathf.Clamp(destination.y, minY, maxY);
+            // Ограничиваем destination, чтобы игрок не выходил за пределы экрана
+            float clampedX = Mathf.Clamp(destination.x, minX, maxX);
+            float clampedY = Mathf.Clamp(destination.y, minY, maxY);
 
-                // Используем ограниченные координаты для назначения следования
-                destination = new Vector3(clampedX, clampedY, -3f);
+            // Используем ограниченные координаты для назначения следования
+            destination = new Vector3(clampedX, clampedY, -3f);
 
-                transform.position = Vector3.Lerp(transform.position, destination, followSpeed * Time.deltaTime);
-            }
+            transform.position = Vector3.Lerp(transform.position, destination, followSpeed * Time.deltaTime);
+        }
 
-            if (Input.GetMouseButtonUp(0))
-            {
-                follow = false;
-            }
+        if (Input.GetMouseButtonUp(0))
+        {
+            follow = false;
         }
     }
 }

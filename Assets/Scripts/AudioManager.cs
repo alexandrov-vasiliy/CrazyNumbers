@@ -23,9 +23,13 @@ public class AudioManager : MonoBehaviour
 	public AudioClip sameColor;
 
 	public AudioClip wrongColor;
+
+	public AudioClip win;
 	
 	public AudioClip[] bossSpawn;
 
+	
+	
 	private bool muteMusic;
 
 	private bool muteEfx;

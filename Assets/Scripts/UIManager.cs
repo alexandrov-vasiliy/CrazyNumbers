@@ -43,6 +43,8 @@ public class UIManager : MonoBehaviour
 
 	private void Update()
 	{
+		IsButton();
+		
 		if (Input.GetMouseButtonDown(0) && gameState == GameState.MENU && !clicked)
 		{
 			if (!IsButton())
@@ -126,10 +128,15 @@ public class UIManager : MonoBehaviour
 		};
 		List<RaycastResult> list = new List<RaycastResult>();
 		EventSystem.current.RaycastAll(eventData, list);
+		
 		foreach (RaycastResult item in list)
 		{
+			Debug.Log(item.gameObject.name);
 			flag |= (item.gameObject.GetComponent<Button>() != null);
 		}
+		Debug.Log(flag);
 		return flag;
 	}
+	
+	
 }
