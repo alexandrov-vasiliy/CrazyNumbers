@@ -21,6 +21,7 @@ public class LevelSwitcher : MonoBehaviour
     [SerializeField] private GameObject _levelCompletePanel;
     [SerializeField] private GameObject _borders;
     [SerializeField] private GameObject _killZone;
+    [SerializeField] private int _delayStartLevel;
 
     [Header("CompleteLevel")] [SerializeField, Range(1f, 5f)]
     private float _completeLevelDelay = 2f;
@@ -31,7 +32,7 @@ public class LevelSwitcher : MonoBehaviour
     [ShowNonSerializedField] private int _obstacleReceived = 0;
 
     private int _currentLevelIndex = 0;
-    
+
     private AudioManager _audioManager;
     private UIManager _uIManager;
     private ObstacleSpawner _obstacleSpawner;
@@ -41,6 +42,7 @@ public class LevelSwitcher : MonoBehaviour
     private PlayerEvents _playerEvents;
     private IAnalytics _analytics;
     private ILocalization _localization;
+    private FullScreenAdShower _fullScreenAdShower;
 
     public Action<int> OnCurrentLevelChange;
     public int CurrentLevelIndex => _currentLevelIndex;
@@ -56,6 +58,7 @@ public class LevelSwitcher : MonoBehaviour
         ILevelSaver levelSaver,
         PlayerEvents playerEvents,
         IAnalytics analytics,
+        FullScreenAdShower fullScreenAdShower,
         ILocalization localization
     )
     {
@@ -68,6 +71,7 @@ public class LevelSwitcher : MonoBehaviour
         _playerEvents = playerEvents;
         _analytics = analytics;
         _localization = localization;
+        _fullScreenAdShower = fullScreenAdShower;
     }
 
     private void OnEnable()
@@ -95,16 +99,15 @@ public class LevelSwitcher : MonoBehaviour
 
         _playerEvents.OnPlayerApplyObstacle -= HandleApplyObstacle;
     }
-    
+
     private void Start()
     {
-       
         _currentLevelIndex = _levelSaver.GetSavedLevel();
         OnCurrentLevelChange?.Invoke(_currentLevelIndex);
-        
-        #if UNITY_EDITOR
-                _currentLevelIndex = _overrideLevelIndex;
-        #endif
+
+#if UNITY_EDITOR
+        _currentLevelIndex = _overrideLevelIndex;
+#endif
     }
 
 
@@ -139,16 +142,18 @@ public class LevelSwitcher : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;
-        
+
         ClearScene();
-        
+
         _player.ResetPosition();
         _obstacleSpawner.StopSpawn();
         _uIManager.ShowGameplay();
-        
+
         PlayLevel();
-        
+
         _playerForce.ResetCurrentForce();
+
+        _fullScreenAdShower.TryShowFullscreenAd();
     }
 
 
@@ -220,11 +225,17 @@ public class LevelSwitcher : MonoBehaviour
 
     public void PlayLevel()
     {
+        StartCoroutine(DelayStartLevel());
+        SetTutorialText();
+    }
+
+    private IEnumerator DelayStartLevel()
+    {
+        yield return new WaitForSeconds(_delayStartLevel);
         ChangeLevelType(CurrentLevel.typeLevel);
         _obstacleSpawner.levelConfig = CurrentLevel;
         _obstacleSpawner.StartSpawn();
 
-        SetTutorialText();
     }
 
     private void SetTutorialText()

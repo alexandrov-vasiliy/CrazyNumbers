@@ -1,13 +1,15 @@
-
 using Adver;
 using Analytics;
 using Level;
 using Localization;
-using UnityEngine.Rendering;
+using UnityEngine;
 using Zenject;
 
 public class GameInstaller : MonoInstaller
 {
+
+    [SerializeField] private int _dieStep;
+    
     public override void InstallBindings()
     {
         Container.Bind<AudioManager>().FromComponentInHierarchy().AsSingle().NonLazy();
@@ -21,5 +23,6 @@ public class GameInstaller : MonoInstaller
         Container.BindInterfacesAndSelfTo<YGAd>().AsSingle();
         Container.Bind<IAnalytics>().To<GamePushAnalytics>().FromNew().AsSingle().NonLazy();
         Container.Bind<ILocalization>().To<YGLocalization>().AsSingle().NonLazy();
+        Container.BindInterfacesAndSelfTo<FullScreenAdShower>().AsSingle().WithArguments(_dieStep);
     }
 }

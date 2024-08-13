@@ -10,6 +10,8 @@ public class SkipLevelView : MonoBehaviour
     [Inject] private LevelSwitcher _levelSwitcher;
     [Inject] private UIManager _uiManager;
     [Inject] private IAnalytics _analytics;
+    [Inject] private Player _player;
+    
 
     [SerializeField] private Text _skipLevelText;
     [SerializeField] private Text _respawnText;
@@ -55,6 +57,7 @@ public class SkipLevelView : MonoBehaviour
     
     private void SkipLevel()
     {
+        _player.ResetPosition();
         _levelSwitcher.ClearScene();
         Time.timeScale = 1;
         _levelSwitcher.NextLevel();

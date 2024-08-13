@@ -122,6 +122,11 @@ public class UIManager : MonoBehaviour
 
     public bool IsButton()
     {
+        if (EventSystem.current == null)
+        {
+            return false;
+        }
+        
         bool flag = false;
         PointerEventData eventData = new PointerEventData(EventSystem.current)
         {
