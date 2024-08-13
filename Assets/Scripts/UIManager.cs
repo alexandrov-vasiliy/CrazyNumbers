@@ -21,15 +21,17 @@ public class UIManager : MonoBehaviour
 
 	private AudioManager _audioManager;
 	private PlayerForce _playerForce;
+	private Player _player;
 	private LevelSwitcher _levelSwitcher;
 	private ObstacleSpawner _obstacleSpawner;
 	[Inject]
-	public void Construct(AudioManager audioManager, PlayerForce playerForce, LevelSwitcher levelSwitcher, ObstacleSpawner obstacleSpawner)
+	public void Construct(AudioManager audioManager, PlayerForce playerForce, LevelSwitcher levelSwitcher, ObstacleSpawner obstacleSpawner, Player player)
 	{
 		_audioManager = audioManager;
 		_playerForce = playerForce;
 		_levelSwitcher = levelSwitcher;
 		_obstacleSpawner = obstacleSpawner;
+		_player = player;
 	}
 
 	private void Start()
@@ -68,13 +70,13 @@ public class UIManager : MonoBehaviour
 		pauseGui.SetActive(value: false);
 		gameplayGui.SetActive(value: false);
 		gameOverGui.SetActive(value: false);
-		if (gameState == GameState.PAUSED)
-		{
-			Time.timeScale = 1f;
-		}
+		
+		Time.timeScale = 1f;
+		
 		gameState = GameState.MENU;
 		_audioManager.PlayEffects(_audioManager.buttonClick);
 		_levelSwitcher.ClearScene();
+		_player.ResetPosition();
 		_obstacleSpawner.StopSpawn();
 	}
 

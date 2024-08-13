@@ -5,6 +5,7 @@ using Analytics;
 using Level;
 using Levels;
 using Localization;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -12,13 +13,10 @@ using Zenject;
 
 public class LevelSwitcher : MonoBehaviour
 {
-    public int _obstacleCount;
-    public int _obstacleReceived = 0;
-
     [SerializeField] private List<LevelConfig> _levels;
 
-    [SerializeField] private int _currentLevelIndex = 0;
 
+    [SerializeField] private int _overrideLevelIndex = 0;
     [SerializeField] private Text _tutorialText;
     [SerializeField] private GameObject _levelCompletePanel;
     [SerializeField] private GameObject _borders;
@@ -29,7 +27,11 @@ public class LevelSwitcher : MonoBehaviour
 
     [SerializeField] private ParticleSystem[] _completeLevelParticles;
 
-    private int _previousLevelIndex;
+
+    [ShowNonSerializedField] private int _obstacleReceived = 0;
+
+    private int _currentLevelIndex = 0;
+    
     private AudioManager _audioManager;
     private UIManager _uIManager;
     private ObstacleSpawner _obstacleSpawner;
@@ -93,6 +95,18 @@ public class LevelSwitcher : MonoBehaviour
 
         _playerEvents.OnPlayerApplyObstacle -= HandleApplyObstacle;
     }
+    
+    private void Start()
+    {
+       
+        _currentLevelIndex = _levelSaver.GetSavedLevel();
+        OnCurrentLevelChange?.Invoke(_currentLevelIndex);
+        
+        #if UNITY_EDITOR
+                _currentLevelIndex = _overrideLevelIndex;
+        #endif
+    }
+
 
     private void HandleApplyObstacle(ObstacleType type)
     {
@@ -101,11 +115,10 @@ public class LevelSwitcher : MonoBehaviour
             _obstacleReceived++;
         }
 
-        if (_obstacleReceived == _obstacleCount)
+        if (_obstacleReceived == CurrentLevel.ObstacleCount)
         {
             StartShowLevelComplete();
-            ClearScene(true);
-            _obstacleReceived = 0;
+            ClearScene();
         }
     }
 
@@ -126,22 +139,18 @@ public class LevelSwitcher : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;
-
-        _obstacleReceived = 0;
-
+        
         ClearScene();
+        
+        _player.ResetPosition();
         _obstacleSpawner.StopSpawn();
         _uIManager.ShowGameplay();
+        
         PlayLevel();
+        
         _playerForce.ResetCurrentForce();
     }
 
-    private void Start()
-    {
-        _currentLevelIndex = _levelSaver.GetSavedLevel();
-        OnCurrentLevelChange?.Invoke(_currentLevelIndex);
-        Debug.Log($"level sfitcher get level {_currentLevelIndex}");
-    }
 
     public void Respawn()
     {
@@ -158,7 +167,7 @@ public class LevelSwitcher : MonoBehaviour
         yield break;
     }
 
-    public void ClearScene(bool partialExecution = false)
+    public void ClearScene()
     {
         GameObject[] array = GameObject.FindGameObjectsWithTag("Obstacle");
         foreach (var t in array)
@@ -166,15 +175,9 @@ public class LevelSwitcher : MonoBehaviour
             t.SetActive(false);
         }
 
-        if (partialExecution)
-        {
-            return;
-        }
-
-        _player.gameObject.transform.position = new Vector2(0f, -2.5f);
-
-        _player.gameObject.gameObject.SetActive(true);
+        _obstacleReceived = 0;
     }
+
 
     public void StartShowLevelComplete()
     {
@@ -218,8 +221,6 @@ public class LevelSwitcher : MonoBehaviour
     public void PlayLevel()
     {
         ChangeLevelType(CurrentLevel.typeLevel);
-        _obstacleCount = CurrentLevel.ObstacleCount;
-
         _obstacleSpawner.levelConfig = CurrentLevel;
         _obstacleSpawner.StartSpawn();
 

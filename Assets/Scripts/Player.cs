@@ -136,4 +136,11 @@ public class Player : MonoBehaviour
             follow = false;
         }
     }
+    
+    public void ResetPosition()
+    {
+        gameObject.transform.position = new Vector2(0f, -2.5f);
+
+        gameObject.gameObject.SetActive(true);
+    }
 }
