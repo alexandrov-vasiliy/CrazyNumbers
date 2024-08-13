@@ -131,10 +131,8 @@ public class UIManager : MonoBehaviour
 		
 		foreach (RaycastResult item in list)
 		{
-			Debug.Log(item.gameObject.name);
 			flag |= (item.gameObject.GetComponent<Button>() != null);
 		}
-		Debug.Log(flag);
 		return flag;
 	}
 	
