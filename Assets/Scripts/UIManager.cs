@@ -6,137 +6,135 @@ using Zenject;
 
 public class UIManager : MonoBehaviour
 {
-	[Header("GUI Components")]
-	public GameObject mainMenuGui;
+    [Header("GUI Components")] public GameObject mainMenuGui;
 
-	public GameObject pauseGui;
+    public GameObject pauseGui;
 
-	public GameObject gameplayGui;
+    public GameObject gameplayGui;
 
-	public GameObject gameOverGui;
+    public GameObject gameOverGui;
 
-	public GameState gameState;
+    public GameState gameState;
 
-	private bool clicked;
+    private bool clicked;
 
-	private AudioManager _audioManager;
-	private PlayerForce _playerForce;
-	private Player _player;
-	private LevelSwitcher _levelSwitcher;
-	private ObstacleSpawner _obstacleSpawner;
-	[Inject]
-	public void Construct(AudioManager audioManager, PlayerForce playerForce, LevelSwitcher levelSwitcher, ObstacleSpawner obstacleSpawner, Player player)
-	{
-		_audioManager = audioManager;
-		_playerForce = playerForce;
-		_levelSwitcher = levelSwitcher;
-		_obstacleSpawner = obstacleSpawner;
-		_player = player;
-	}
+    private AudioManager _audioManager;
+    private PlayerForce _playerForce;
+    private Player _player;
+    private LevelSwitcher _levelSwitcher;
+    private ObstacleSpawner _obstacleSpawner;
 
-	private void Start()
-	{
-		mainMenuGui.SetActive(value: true);
-		pauseGui.SetActive(value: false);
-		gameplayGui.SetActive(value: false);
-		gameOverGui.SetActive(value: false);
-		gameState = GameState.MENU;
-	}
+    [Inject]
+    public void Construct(AudioManager audioManager, PlayerForce playerForce, LevelSwitcher levelSwitcher,
+        ObstacleSpawner obstacleSpawner, Player player)
+    {
+        _audioManager = audioManager;
+        _playerForce = playerForce;
+        _levelSwitcher = levelSwitcher;
+        _obstacleSpawner = obstacleSpawner;
+        _player = player;
+    }
 
-	private void Update()
-	{
-		IsButton();
-		
-		if (Input.GetMouseButtonDown(0) && gameState == GameState.MENU && !clicked)
-		{
-			if (!IsButton())
-			{
-				_audioManager.PlayEffects(_audioManager.buttonClick);
-				ShowGameplay();
-				_levelSwitcher.PlayLevel();
-			}
-		}
-		else if (Input.GetMouseButtonUp(0) && clicked && gameState == GameState.MENU)
-		{
-			clicked = false;
-		}
-	}
+    private void Start()
+    {
+        mainMenuGui.SetActive(value: true);
+        pauseGui.SetActive(value: false);
+        gameplayGui.SetActive(value: false);
+        gameOverGui.SetActive(value: false);
+        gameState = GameState.MENU;
+    }
 
-	public void ShowMainMenu()
-	{
-		_playerForce.ResetCurrentForce();
-		clicked = true;
-		mainMenuGui.SetActive(value: true);
-		pauseGui.SetActive(value: false);
-		gameplayGui.SetActive(value: false);
-		gameOverGui.SetActive(value: false);
-		
-		Time.timeScale = 1f;
-		
-		gameState = GameState.MENU;
-		_audioManager.PlayEffects(_audioManager.buttonClick);
-		_levelSwitcher.ClearScene();
-		_player.ResetPosition();
-		_obstacleSpawner.StopSpawn();
-	}
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && gameState == GameState.MENU && !clicked)
+        {
+            if (!IsButton())
+            {
+                _audioManager.PlayEffects(_audioManager.buttonClick);
+                ShowGameplay();
+                _levelSwitcher.PlayLevel();
+            }
+        }
+        else if (Input.GetMouseButtonUp(0) && clicked && gameState == GameState.MENU)
+        {
+            clicked = false;
+        }
+    }
 
-	public void ShowPauseMenu()
-	{
-		if (gameState != GameState.PAUSED)
-		{
-			pauseGui.SetActive(value: true);
-			Time.timeScale = 0f;
-			gameState = GameState.PAUSED;
-			_audioManager.PlayEffects(_audioManager.buttonClick);
-		}
-	}
+    public void ShowMainMenu()
+    {
+        _playerForce.ResetCurrentForce();
+        clicked = true;
+        mainMenuGui.SetActive(value: true);
+        pauseGui.SetActive(value: false);
+        gameplayGui.SetActive(value: false);
+        gameOverGui.SetActive(value: false);
 
-	public void HidePauseMenu()
-	{
-		pauseGui.SetActive(value: false);
-		Time.timeScale = 1f;
-		gameState = GameState.PLAYING;
-		_audioManager.PlayEffects(_audioManager.buttonClick);
-	}
+        Time.timeScale = 1f;
 
-	public void ShowGameplay()
-	{
-		mainMenuGui.SetActive(value: false);
-		pauseGui.SetActive(value: false);
-		gameplayGui.SetActive(value: true);
-		gameOverGui.SetActive(value: false);
-		gameState = GameState.PLAYING;
+        gameState = GameState.MENU;
+        _audioManager.PlayEffects(_audioManager.buttonClick);
+        _levelSwitcher.ClearScene();
+        _player.ResetPosition();
+        _obstacleSpawner.StopSpawn();
+    }
 
-		_audioManager.PlayEffects(_audioManager.buttonClick);
-		_audioManager.PlayMusic(_audioManager.gameMusic);
-	}
+    public void ShowPauseMenu()
+    {
+        if (gameState != GameState.PAUSED)
+        {
+            pauseGui.SetActive(value: true);
+            Time.timeScale = 0f;
+            gameState = GameState.PAUSED;
+            _audioManager.PlayEffects(_audioManager.buttonClick);
+        }
+    }
 
-	public void ShowGameOver()
-	{
-		mainMenuGui.SetActive(value: false);
-		pauseGui.SetActive(value: false);
-		gameplayGui.SetActive(value: false);
-		gameOverGui.SetActive(value: true);
-		gameState = GameState.GAMEOVER;
-		_audioManager.PlayMusic(_audioManager.gameOverMusic);
-	}
+    public void HidePauseMenu()
+    {
+        pauseGui.SetActive(value: false);
+        Time.timeScale = 1f;
+        gameState = GameState.PLAYING;
+        _audioManager.PlayEffects(_audioManager.buttonClick);
+    }
 
-	public bool IsButton()
-	{
-		bool flag = false;
-		PointerEventData eventData = new PointerEventData(EventSystem.current)
-		{
-			position = Input.mousePosition
-		};
-		List<RaycastResult> list = new List<RaycastResult>();
-		EventSystem.current.RaycastAll(eventData, list);
-		
-		foreach (RaycastResult item in list)
-		{
-			flag |= (item.gameObject.GetComponent<Button>() != null);
-		}
-		return flag;
-	}
-	
-	
+    public void ShowGameplay()
+    {
+        mainMenuGui.SetActive(value: false);
+        pauseGui.SetActive(value: false);
+        gameplayGui.SetActive(value: true);
+        gameOverGui.SetActive(value: false);
+        gameState = GameState.PLAYING;
+
+        _audioManager.PlayEffects(_audioManager.buttonClick);
+        _audioManager.PlayMusic(_audioManager.gameMusic);
+    }
+
+    public void ShowGameOver()
+    {
+        mainMenuGui.SetActive(value: false);
+        pauseGui.SetActive(value: false);
+        gameplayGui.SetActive(value: false);
+        gameOverGui.SetActive(value: true);
+        gameState = GameState.GAMEOVER;
+        _audioManager.PlayMusic(_audioManager.gameOverMusic);
+    }
+
+    public bool IsButton()
+    {
+        bool flag = false;
+        PointerEventData eventData = new PointerEventData(EventSystem.current)
+        {
+            position = Input.mousePosition
+        };
+        List<RaycastResult> list = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventData, list);
+
+        foreach (RaycastResult item in list)
+        {
+            flag |= (item.gameObject.GetComponent<Button>() != null);
+        }
+
+        return flag;
+    }
 }

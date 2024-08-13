@@ -24,13 +24,13 @@ MonoBehaviour:
     photo: https://justplaygames.ru/public/icon_player.png
     payingStatus: paying
     serverTime: 1721201231000
-  AdWhenLoadingScene: 0
+  AdWhenLoadingScene: 1
   showFirstAd: 1
   rewardedAfterClosing: 1
   adDisplayCalls: 0
-  fullscreenAdInterval: 60
+  fullscreenAdInterval: 1
   durationOfAdSimulation: 0.5
-  loadAdWithDelaySimulation: 0
+  loadAdWithDelaySimulation: 2
   testErrorOfRewardedAdsInEditor: 0
   saveCloud: 1
   flush: 0

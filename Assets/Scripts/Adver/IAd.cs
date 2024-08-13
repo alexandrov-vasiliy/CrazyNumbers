@@ -7,7 +7,9 @@ namespace Adver
 
 		public event Action OnRewarded;
 
+
         public void ShowAd();
+        public void ShowFullScreenAd();
 
 
     }

@@ -9,12 +9,18 @@ namespace Adver
     public class YGAd: IAd, IInitializable, IDisposable
     {
         public event Action OnRewarded;
+
         
         
         
         public void ShowAd()
         {
             YandexGame.RewVideoShow(1);
+        }
+
+        public void ShowFullScreenAd()
+        {
+            YandexGame.FullscreenShow();
         }
 
         public void Reward(int id)

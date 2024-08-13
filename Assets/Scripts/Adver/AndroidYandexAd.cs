@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Adver
 {
-    public class AndroidYandexAd : IAd, IInitializable, IDisposable
+    public abstract class AndroidYandexAd : IAd, IInitializable, IDisposable
     {
         private const string rewardedId = "R-M-9743258-1";
         public event Action OnRewarded;
@@ -38,7 +38,9 @@ namespace Adver
             rewardedAdLoader.LoadAd(adRequestConfiguration);
             
         }
-        
+
+        public abstract void ShowFullScreenAd();
+
         public void HandleAdLoaded(object sender, RewardedAdLoadedEventArgs args)
         {
             // Rewarded ad was loaded successfully. Now you can handle it.
