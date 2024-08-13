@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     [Header("Animation")] [SerializeField, Range(0f, 1f)]
     private float animationDuration = 0.2f;
 
+    [SerializeField] private float maxScale = 5f;
+
     [FormerlySerializedAs("scaleMultiplyer")] [SerializeField]
     private float scaleMultiply = 1.2f;
 
@@ -71,7 +73,7 @@ public class Player : MonoBehaviour
     private void ApplyObstacle(ObstacleType _)
     {
         DOTween.Sequence()
-            .Append(transform.DOScale(transform.localScale * scaleMultiply, animationDuration))
+            .Append(transform.DOScale(Vector3.ClampMagnitude(transform.localScale * scaleMultiply, maxScale), animationDuration))
             .Append(transform.DOScale(new Vector3(1f, 1f, 1f), animationDuration));
 
         _audioManager.PlayEffects(_audioManager.sameColor);
