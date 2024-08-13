@@ -1,6 +1,7 @@
 using System;
 using YandexMobileAds;
 using YandexMobileAds.Base;
+using YG;
 using Zenject;
 
 namespace Adver
@@ -8,15 +9,23 @@ namespace Adver
     public abstract class AndroidYandexAd : IAd, IInitializable, IDisposable
     {
         private const string rewardedId = "R-M-9743258-1";
+        private const string interstitialAdUnitId = "R-M-9743258-1";
         public event Action OnRewarded;
 
         private RewardedAdLoader rewardedAdLoader;
         private RewardedAd rewardedAd;
+        
+        private InterstitialAdLoader interstitialAdLoader;
+        private Interstitial interstitial;
 
         private void SetupLoader()
         {
             rewardedAdLoader = new RewardedAdLoader();
             rewardedAdLoader.OnAdLoaded += HandleAdLoaded;
+            
+            interstitialAdLoader = new InterstitialAdLoader();
+            interstitialAdLoader.OnAdLoaded += HandleInterstitialLoaded;
+            interstitialAdLoader.OnAdFailedToLoad += HandleInterstitialFailedToLoad;
         }
 
         public void Initialize()
@@ -30,6 +39,12 @@ namespace Adver
             
             RequestRewarded();
             rewardedAd?.Show();
+        }
+
+        public void ShowInterstitial()
+        {
+            AdRequestConfiguration adRequestConfiguration = new AdRequestConfiguration.Builder(interstitialAdUnitId).Build();
+
         }
 
         private void RequestRewarded()
@@ -60,6 +75,16 @@ namespace Adver
             if (rewardedAd == null) return;
             rewardedAd.Destroy();
             rewardedAd = null;
+        }
+        
+        
+        public void HandleInterstitialLoaded(object sender, InterstitialAdLoadedEventArgs args)
+        {
+            interstitial = args.Interstitial;
+        }
+
+        public void HandleInterstitialFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+        {
         }
     }
 }

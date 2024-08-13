@@ -844,8 +844,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderLine: 2
-  offset: 0
-  camera: {fileID: 0}
+  offset: 0.2
+  camera: {fileID: 1790602294396219110}
 --- !u!212 &429162353
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1124,7 +1124,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1efed4d33454d49619f01805211dff02, type: 2}
   - {fileID: 11400000, guid: 144a0205ab9b4ea46be698db4aa5e15f, type: 2}
   - {fileID: 11400000, guid: 1efed4d33454d49619f01805211dff02, type: 2}
-  _overrideLevelIndex: 7
+  _overrideLevelIndex: 3
   _tutorialText: {fileID: 228320349}
   _levelCompletePanel: {fileID: 2074141560}
   _borders: {fileID: 514639933}
@@ -2270,8 +2270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderLine: 0
-  offset: 0
-  camera: {fileID: 0}
+  offset: -0.2
+  camera: {fileID: 1790602294396219110}
 --- !u!212 &1153973653
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2896,7 +2896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 566ad104cab2f46939aaa9efaa0a957d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dieStep: 3
+  _dieStep: 2
 --- !u!114 &1545935937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3154,8 +3154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderLine: 1
-  offset: 0
-  camera: {fileID: 0}
+  offset: -0.2
+  camera: {fileID: 1790602294396219110}
 --- !u!212 &1786370380
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5164,10 +5164,10 @@ MonoBehaviour:
   followSpeed: 20
   offsetY: 0.8
   Renderer: {fileID: 969369197}
-  offsetMinX: 0
-  offsetMaxX: 0
-  offsetMinY: 0
-  offsetMaxY: 0
+  offsetMinX: -1
+  offsetMaxX: 1
+  offsetMinY: -1
+  offsetMaxY: 1
   animationDuration: 0.2
   maxScale: 5
   scaleMultiply: 1.2
