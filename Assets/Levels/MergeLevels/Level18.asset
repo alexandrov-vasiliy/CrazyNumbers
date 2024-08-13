@@ -1,0 +1,187 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f7c8bbf442b47dc96ae5b842404f473, type: 3}
+  m_Name: Level18
+  m_EditorClassIdentifier: 
+  typeLevel: 1
+  obstacles:
+  - spawnRate: 0.2
+    force: 10
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 20
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 40
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 50
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 30
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 70
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 80
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 25
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 34
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 78
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 99
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 23
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 700
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 1
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 20
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 123
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 345
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 678
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 456
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 211
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 12
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 67
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 32
+    gravityScale: 1.3
+    type: 0
+  - spawnRate: 0.2
+    force: 56
+    gravityScale: 1.3
+    type: 0
+  Tutorial:
+    RuText: 
+    EnText: 

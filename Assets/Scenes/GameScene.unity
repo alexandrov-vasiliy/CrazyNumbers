@@ -710,8 +710,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderLine: 2
-  offset: 0.2
-  camera: {fileID: 1790602294396219110}
+  offset: 0
+  camera: {fileID: 0}
 --- !u!212 &429162353
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -983,15 +983,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3211d88c18212a343b3282a6e56219cd, type: 2}
   - {fileID: 11400000, guid: a42c5f8049bb5774c9e0d8f2b571dba5, type: 2}
   - {fileID: 11400000, guid: dd7c2166815cf4a88b320fe627d154f5, type: 2}
-  _overrideLevelIndex: 5
+  - {fileID: 11400000, guid: 99bb68ab4ab7f7148b358371f9701f38, type: 2}
+  - {fileID: 11400000, guid: e0a7fad36ec86a143b57b8d057aa5688, type: 2}
+  - {fileID: 11400000, guid: 144a0205ab9b4ea46be698db4aa5e15f, type: 2}
+  _overrideLevelIndex: 26
   _tutorialText: {fileID: 228320349}
   _levelCompletePanel: {fileID: 2074141560}
   _borders: {fileID: 514639933}
   _killZone: {fileID: 1790602294077451971}
-  _completeLevelDelay: 3
-  _completeLevelParticles:
-  - {fileID: 1025806094}
-  - {fileID: 964480453}
+  _completeLevelDelay: 2
+  _completeLevelParticles: []
 --- !u!4 &582986230
 Transform:
   m_ObjectHideFlags: 0
@@ -1823,11 +1824,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4938095755617958528, guid: 2e79f16be10fbd14f8d5ef191f8db4aa, type: 3}
   m_PrefabInstance: {fileID: 964480451}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &964480453 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4938095755617958530, guid: 2e79f16be10fbd14f8d5ef191f8db4aa, type: 3}
-  m_PrefabInstance: {fileID: 964480451}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &969369195
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,11 +1996,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 775817854216231134, guid: ed962e35f7fa6f34f8d27aa6d19ea293, type: 3}
   m_PrefabInstance: {fileID: 1025806092}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1025806094 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 9169966119468206341, guid: ed962e35f7fa6f34f8d27aa6d19ea293, type: 3}
-  m_PrefabInstance: {fileID: 1025806092}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1140049190
 GameObject:
   m_ObjectHideFlags: 0
@@ -2133,8 +2124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderLine: 0
-  offset: -0.1
-  camera: {fileID: 1790602294396219110}
+  offset: 0
+  camera: {fileID: 0}
 --- !u!212 &1153973653
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3080,8 +3071,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderLine: 1
-  offset: -0.1
-  camera: {fileID: 1790602294396219110}
+  offset: 0
+  camera: {fileID: 0}
 --- !u!212 &1786370380
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4960,10 +4951,10 @@ MonoBehaviour:
   followSpeed: 10
   offsetY: 0.8
   Renderer: {fileID: 969369197}
-  offsetMinX: 1
-  offsetMaxX: 1
-  offsetMinY: 1
-  offsetMaxY: 1
+  offsetMinX: 0
+  offsetMaxX: 0
+  offsetMinY: 0
+  offsetMaxY: 0
   animationDuration: 0.2
   scaleMultiply: 1.2
 --- !u!114 &1790602295973277478
