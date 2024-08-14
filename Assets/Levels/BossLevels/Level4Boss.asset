@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7c8bbf442b47dc96ae5b842404f473, type: 3}
   m_Name: Level4Boss
   m_EditorClassIdentifier: 
+  typeLevel: 0
   obstacles:
   - spawnRate: 1
     force: 2
@@ -97,3 +98,8 @@ MonoBehaviour:
     force: 67
     gravityScale: 0.5
     type: 3
+  Tutorial:
+    RuText: "\u0413\u0440\u0430\u043D\u0438\u0446\u044B \u0441\u0442\u0435\u0440\u043B\u0438\u0441\u044C
+      \u043D\u0430\u0431\u0435\u0440\u0438 \u043A\u0430\u043A \u043C\u043E\u0436\u043D\u043E
+      \u0431\u043E\u043B\u044C\u0448\u0435 \u043E\u0447\u043A\u043E\u0432"
+    EnText: The borders of have been erased, score as many points as possible
