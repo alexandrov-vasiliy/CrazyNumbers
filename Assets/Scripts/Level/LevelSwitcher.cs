@@ -90,7 +90,7 @@ public class LevelSwitcher : MonoBehaviour
     private void OnDisable()
     {
         _playerEvents.OnPlayerDead -= GameOver;
-        _playerEvents.OnLevelComplete -= NextLevel;
+        _playerEvents.OnLevelComplete -= StartShowLevelComplete;
 
         if (_obstacleSpawner.levelConfig.typeLevel == LevelType.BossLevel)
         {
@@ -121,7 +121,6 @@ public class LevelSwitcher : MonoBehaviour
         if (_obstacleReceived == CurrentLevel.ObstacleCount)
         {
             StartShowLevelComplete();
-            ClearScene();
         }
     }
 
@@ -187,6 +186,8 @@ public class LevelSwitcher : MonoBehaviour
     public void StartShowLevelComplete()
     {
         StartCoroutine(ShowLevelComplete());
+        ClearScene();
+
     }
 
     private IEnumerator ShowLevelComplete()
