@@ -9,4 +9,12 @@ namespace Localization
           return YandexGame.lang;
         }
     }
+    
+    public class AndroidLocalization : ILocalization
+    {
+        public string GetLang()
+        {
+            return "ru";
+        }
+    }
 }
