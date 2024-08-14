@@ -19,15 +19,15 @@ MonoBehaviour:
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
-    force: 30
+    force: 36
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
-    force: 21
+    force: 25
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
-    force: 10
+    force: 20
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
@@ -43,11 +43,11 @@ MonoBehaviour:
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
-    force: 2
+    force: 3
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
-    force: 1
+    force: 5
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
@@ -59,14 +59,18 @@ MonoBehaviour:
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
+    force: 5
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
     force: 10
     gravityScale: 1
     type: 0
-  - spawnRate: 0.3
+  - spawnRate: 1
     force: 200
     gravityScale: 1
     type: 0
-  - spawnRate: 0.3
+  - spawnRate: 1
     force: 789
     gravityScale: 1
     type: 0
@@ -147,15 +151,15 @@ MonoBehaviour:
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
-    force: 0
+    force: 3
+    gravityScale: 1
+    type: 1
+  - spawnRate: 0.3
+    force: 200
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
-    force: 12
-    gravityScale: 1
-    type: 0
-  - spawnRate: 0.3
-    force: 21
+    force: 300
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
@@ -163,14 +167,21 @@ MonoBehaviour:
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
-    force: 23
+    force: 500
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
-    force: 43
+    force: 643
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
-    force: 67
+    force: 643
     gravityScale: 1
     type: 0
+  - spawnRate: 0.3
+    force: 500
+    gravityScale: 1
+    type: 0
+  Tutorial:
+    RuText: 
+    EnText: 

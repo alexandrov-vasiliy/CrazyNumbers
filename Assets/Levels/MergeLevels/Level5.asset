@@ -51,10 +51,6 @@ MonoBehaviour:
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
-    force: 33
-    gravityScale: 1
-    type: 0
-  - spawnRate: 0.3
     force: 1
     gravityScale: 1
     type: 0
@@ -88,6 +84,10 @@ MonoBehaviour:
     type: 0
   - spawnRate: 0.3
     force: 12
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 33
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
@@ -127,11 +127,11 @@ MonoBehaviour:
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
-    force: 700
+    force: 800
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
-    force: 800
+    force: 500
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
@@ -140,6 +140,10 @@ MonoBehaviour:
     type: 0
   - spawnRate: 0.3
     force: 100
+    gravityScale: 1
+    type: 0
+  - spawnRate: 0.3
+    force: 4
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
@@ -174,3 +178,6 @@ MonoBehaviour:
     force: 4
     gravityScale: 1
     type: 0
+  Tutorial:
+    RuText: 
+    EnText: 
