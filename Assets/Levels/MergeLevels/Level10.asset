@@ -171,6 +171,9 @@ MonoBehaviour:
     gravityScale: 1
     type: 0
   - spawnRate: 0.3
-    force: 4
+    force: 400
     gravityScale: 1
     type: 0
+  Tutorial:
+    RuText: 
+    EnText: 

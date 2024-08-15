@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace Obstacles
         [SerializeField, Range(0f, 1f)] private float blinkFadeValue = 0.4f;
         [SerializeField, Min(0.1f)] private float finalFadeDuration = 2f;
 
+        private Sequence _sequence; 
         private Vector3 originalScale;
         private Vector3 scaledUp;
 
@@ -23,30 +25,35 @@ namespace Obstacles
             scaledUp = originalScale * scaleMultiplier;
         }
 
-        
+        private void OnDisable()
+        {
+            _sequence.Kill();
+        }
+
+
         public override void InitObstacle(Vector2 position, float force, float gravityScale, ObstacleType type)
         {
             
             base.InitObstacle(position, force, gravityScale, type);
             
-            Sequence sequence = DOTween.Sequence();
+            _sequence = DOTween.Sequence();
 
             for (int i = 0; i < blinkCount; i++)
             {
-                sequence.Append(spriteRenderer.DOFade(blinkFadeValue, blinkDuration))
+                _sequence.Append(spriteRenderer.DOFade(blinkFadeValue, blinkDuration))
                     .Join(transform.DOScale(scaledUp, blinkDuration))
                     .Append(spriteRenderer.DOFade(1, blinkDuration))
                     .Join(transform.DOScale(originalScale, blinkDuration));
             }
 
-            sequence.Append(spriteRenderer.DOFade(0, finalFadeDuration))
+            _sequence.Append(spriteRenderer.DOFade(0, finalFadeDuration))
                 .Join(transform.DOScale(Vector3.zero, finalFadeDuration))
                 .OnComplete(() =>
                 {
                      gameObject.SetActive(false);
                 });
 
-            sequence.Play();            
+            _sequence.Play();            
         }
     }
 }

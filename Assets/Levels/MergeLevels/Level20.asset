@@ -26,11 +26,11 @@ MonoBehaviour:
     force: 35
     gravityScale: 1.5
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 0.2
     force: 465
     gravityScale: 1.5
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 0.2
     force: 1
     gravityScale: 1.5
     type: 0
@@ -38,59 +38,55 @@ MonoBehaviour:
     force: 2
     gravityScale: 1.5
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 0.2
     force: 4
     gravityScale: 1.5
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 0.2
     force: 7
     gravityScale: 1.5
     type: 0
   - spawnRate: 0.1
-    force: 2
-    gravityScale: 1.5
-    type: 1
-  - spawnRate: 0.1
     force: 23
     gravityScale: 1.5
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 0.2
     force: 65
     gravityScale: 1.5
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 0.2
     force: 200
     gravityScale: 1.5
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 1
     force: 333
     gravityScale: 1.5
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 0.2
     force: 43
     gravityScale: 1.5
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 0.2
     force: 432
     gravityScale: 1.5
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 0.2
     force: 123
     gravityScale: 1.5
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 0.5
     force: 23
     gravityScale: 1.5
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 0.2
     force: 2
     gravityScale: 1.5
     type: 1
-  - spawnRate: 0.1
+  - spawnRate: 0.2
     force: 3
     gravityScale: 1.5
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 0.5
     force: 2
     gravityScale: 1.5
     type: 0
@@ -102,35 +98,35 @@ MonoBehaviour:
     force: 1000
     gravityScale: 2
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 0.2
     force: 567
     gravityScale: 2
     type: 0
-  - spawnRate: 0.1
-    force: 666
+  - spawnRate: 0.2
+    force: 13
     gravityScale: 2
     type: 0
-  - spawnRate: 0.1
-    force: 777
+  - spawnRate: 0.2
+    force: 45
     gravityScale: 2
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 0.5
     force: 987
     gravityScale: 2
     type: 0
-  - spawnRate: 0.1
-    force: 567
+  - spawnRate: 1
+    force: 65
     gravityScale: 2
     type: 0
   - spawnRate: 0.1
-    force: 454
+    force: 12
     gravityScale: 2
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 0.2
     force: 346
     gravityScale: 2
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 0.5
     force: 222
     gravityScale: 2
     type: 0
@@ -146,7 +142,7 @@ MonoBehaviour:
     force: 890
     gravityScale: 2
     type: 0
-  - spawnRate: 0.1
+  - spawnRate: 1
     force: 34
     gravityScale: 2
     type: 0

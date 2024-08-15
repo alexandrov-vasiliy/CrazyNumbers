@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa40c0dc9b9b6b3c170ed445c99f4984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _divideStep: 0
   _rb: {fileID: 1790602294899535570}
   NumberForce: 1
   spriteRenderer: {fileID: 8519501785274604556}
@@ -186,6 +187,18 @@ MonoBehaviour:
   colorThresholds:
   - color: {r: 0.5566038, g: 0.002625496, b: 0.002625496, a: 1}
     threshold: 100
+  - color: {r: 0.7735849, g: 0.09122462, b: 0.09122462, a: 1}
+    threshold: 50
+  - color: {r: 0.9528302, g: 0.29214135, b: 0.29214135, a: 1}
+    threshold: 20
+  - color: {r: 0.08764241, g: 0.49056602, b: 0.030081892, a: 1}
+    threshold: 0
+  - color: {r: 0.10321739, g: 0.6226415, b: 0.026432883, a: 1}
+    threshold: -20
+  - color: {r: 0.30469835, g: 0.754717, b: 0.23851903, a: 1}
+    threshold: -50
+  - color: {r: 0.52016646, g: 0.9716981, b: 0.45376468, a: 1}
+    threshold: -100
 --- !u!114 &7086774106460762146
 MonoBehaviour:
   m_ObjectHideFlags: 0
