@@ -19,7 +19,7 @@ public class GameInstaller : MonoInstaller
         Container.Bind<ObstacleSpawner>().FromComponentInHierarchy().AsSingle().NonLazy();
         Container.Bind<LevelSwitcher>().FromComponentInHierarchy().AsSingle().NonLazy();
 
-        Container.Bind<IAnalytics>().To<GamePushAnalytics>().FromNew().AsSingle().NonLazy();
+        Container.Bind<IAnalytics>().To<YandexMetrikaAnalytics>().FromNew().AsSingle().NonLazy();
         Container.BindInterfacesAndSelfTo<FullScreenAdShower>().AsSingle().WithArguments(_dieStep);
 
         BindSaver();
