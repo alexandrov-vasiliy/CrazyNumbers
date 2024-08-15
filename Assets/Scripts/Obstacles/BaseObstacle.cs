@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Rigidbody2D))]
 public class BaseObstacle : MonoBehaviour
 {
-    
+    [SerializeField] private float _divideStep;
     [SerializeField] protected Rigidbody2D _rb;
     public float NumberForce = 1f;
     public SpriteRenderer spriteRenderer;
@@ -45,7 +45,9 @@ public class BaseObstacle : MonoBehaviour
     private void RandomizeSize()
     {
         transform.localScale = Vector3.one;
-        transform.localScale *= Random.Range(minMaxRangeCoef.x, minMaxRangeCoef.y);
+        
+        transform.localScale += new Vector3(Mathf.Clamp(NumberForce / _divideStep, minMaxRangeCoef.x, minMaxRangeCoef.y),
+            Mathf.Clamp(NumberForce / _divideStep, minMaxRangeCoef.x, minMaxRangeCoef.y), 1);
     }
     
 }

@@ -72,8 +72,11 @@ public class Player : MonoBehaviour
 
     private void ApplyObstacle(ObstacleType _)
     {
+
+        Vector3 scaleVector = Vector3.ClampMagnitude(Renderer.transform.localScale * scaleMultiply, maxScale);
+        
         DOTween.Sequence()
-            .Append(Renderer.transform.DOScale(Vector3.ClampMagnitude(Renderer.transform.localScale * scaleMultiply, maxScale), animationDuration))
+            .Append(Renderer.transform.DOScale(new Vector3(scaleVector.x, scaleVector.y, 1), animationDuration))
             .Append(Renderer.transform.DOScale(new Vector3(2f, 2f, 2f), animationDuration));
 
         _audioManager.PlayEffects(_audioManager.sameColor);

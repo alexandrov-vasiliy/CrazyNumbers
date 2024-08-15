@@ -14,6 +14,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     public UnityEvent OnLevelComplete = new UnityEvent();
 
+    [SerializeField] private float _yoffset;
     [SerializeField] private float spawnRateCoef = 0.1f;
 
     [Inject] private UIManager _uiManager;
@@ -23,7 +24,7 @@ public class ObstacleSpawner : MonoBehaviour
         _factory = new PoolObjectFactory();
         _camera = Camera.main;
         _screenBounds =
-            _camera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, _camera.transform.position.z));
+            _camera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height+_yoffset, _camera.transform.position.z));
         
     }
 

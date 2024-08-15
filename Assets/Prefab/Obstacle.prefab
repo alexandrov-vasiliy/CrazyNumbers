@@ -213,10 +213,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa40c0dc9b9b6b3c170ed445c99f4984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _divideStep: 300
   _rb: {fileID: 1790602294899535570}
   NumberForce: 1
   spriteRenderer: {fileID: 8519501785274604556}
-  minMaxRangeCoef: {x: 1, y: 1.5}
+  minMaxRangeCoef: {x: 0, y: 0.6}
   number: {fileID: 9129380530361166794}
   colorThresholds:
   - color: {r: 0.5566038, g: 0.002625496, b: 0.002625496, a: 1}
