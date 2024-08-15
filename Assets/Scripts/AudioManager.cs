@@ -24,7 +24,7 @@ public class AudioManager : MonoBehaviour
 
 	public AudioClip wrongColor;
 
-	public AudioClip win;
+	public AudioClip[] win;
 	
 	public AudioClip[] bossSpawn;
 
@@ -63,7 +63,6 @@ public class AudioManager : MonoBehaviour
 	{
 		if (!muteEfx)
 		{
-			Debug.Log($"Play Effect {clip.name}");
 			efxSource.PlayOneShot(clip);
 		}
 	}
@@ -102,6 +101,8 @@ public class AudioManager : MonoBehaviour
 
 	public void PlayBossSound()
 	{
+		if (muteEfx) return;
+
 		if (bossSpawn.Length > 0)
 		{
 			var clip = bossSpawn[Random.Range(0, bossSpawn.Length)];

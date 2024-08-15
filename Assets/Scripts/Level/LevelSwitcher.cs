@@ -192,6 +192,10 @@ public class LevelSwitcher : MonoBehaviour
 
     private IEnumerator ShowLevelComplete()
     {
+        foreach (var winClip in _audioManager.win)
+        {
+            _audioManager.PlayEffects(winClip);
+        }
         _levelCompletePanel.SetActive(true);
         _tutorialText.text = "";
         foreach (var particle in _completeLevelParticles)

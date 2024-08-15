@@ -2518,6 +2518,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cdb26c31ca04ab8ba81b4acf5e52e80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1241744204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2211564899198745197, guid: caf9732433f4dc044845763962493607, type: 3}
+  m_PrefabInstance: {fileID: 1656911142}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1241744208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241744204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79727efbe75d460393cadd644599c0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1415350092
 GameObject:
   m_ObjectHideFlags: 0
@@ -3003,10 +3020,45 @@ PrefabInstance:
       propertyPath: pauseMethod
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: closingADValues.timeScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: customEvents.CloseAd.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: customEvents.CloseAd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: customEvents.CloseAd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1241744208}
+    - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: customEvents.CloseAd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: customEvents.CloseAd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnAdClose
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: customEvents.CloseAd.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Adver.AdvertEvents, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607, type: 3}
+      propertyPath: customEvents.CloseAd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2211564899198745197, guid: caf9732433f4dc044845763962493607, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1241744208}
   m_SourcePrefab: {fileID: 100100000, guid: caf9732433f4dc044845763962493607, type: 3}
 --- !u!1 &1681537977
 GameObject:
@@ -6203,14 +6255,15 @@ MonoBehaviour:
   efxSource: {fileID: 1790602295436406510}
   musicSource: {fileID: 1790602295436406509}
   bossSource: {fileID: 1966759709}
-  menuMusic: {fileID: 8300000, guid: 841170b070d9f4f7bb0fefae681d33ed, type: 3}
-  gameMusic: {fileID: 8300000, guid: 8ff701409714a4bc2a4c67bab65b0ef9, type: 3}
+  menuMusic: {fileID: 8300000, guid: 992cf4273578a4a3cabc50834bb0b8d9, type: 3}
+  gameMusic: {fileID: 8300000, guid: 08d746914c91b4196b81ff4fda97f143, type: 3}
   gameOverMusic: {fileID: 8300000, guid: f958e5444a12f4da4bf1dc8adcc2bf96, type: 3}
   buttonClick: {fileID: 8300000, guid: eadb624790a649a89a193471ab49f09a, type: 3}
   gameOver: {fileID: 8300000, guid: 33f61ed168f14f3caf8087da1f5df53e, type: 3}
   sameColor: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
   wrongColor: {fileID: 8300000, guid: 453c0c613a8347a49b92fc3ee6d7b075, type: 3}
-  win: {fileID: 0}
+  win:
+  - {fileID: 8300000, guid: 7478151cf36724a7dada558f746c3633, type: 3}
   bossSpawn:
   - {fileID: 8300000, guid: ba83e9ceb21a74c288def77bdaf59b3b, type: 3}
 --- !u!222 &1790602297785216756
