@@ -25,7 +25,6 @@ namespace Adver
 
         public void Reward(int id)
         {
-            Debug.Log($"Reward id: {id}");
             if (id == 1)
             {
                 OnRewarded?.Invoke();

@@ -37,7 +37,6 @@ public class BaseObstacle : MonoBehaviour
         if (_type == ObstacleType.Boss)
         {
             int bossIndex = Random.Range(0, _audioManager.bossSpawn.Length);
-            Debug.Log($"Play boss sound {bossIndex}");
             _audioManager.PlayBossSound();
         }
     }

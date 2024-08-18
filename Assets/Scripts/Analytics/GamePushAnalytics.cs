@@ -1,5 +1,5 @@
 using GamePush;
-using Unity.VisualScripting;
+using Zenject;
 
 namespace Analytics
 {

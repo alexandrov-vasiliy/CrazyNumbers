@@ -1,16 +1,16 @@
-using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SideLine : MonoBehaviour
 {
     [SerializeField] private BorderLine borderLine;
     [SerializeField] private float offset;
 
-    [SerializeField] private Camera camera;
+    [FormerlySerializedAs("camera")] [SerializeField] private Camera _camera;
 
     private void Awake()
     {
-        camera = Camera.main;
+        _camera = Camera.main;
     }
 
     private void Start()
@@ -21,7 +21,7 @@ public class SideLine : MonoBehaviour
 
     private void SetLinePosition()
     {
-        Vector3 vector = camera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0f));
+        Vector3 vector = _camera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0f));
 
         Vector3 sidePosition = Vector3.zero;
         if (borderLine == BorderLine.LEFT)

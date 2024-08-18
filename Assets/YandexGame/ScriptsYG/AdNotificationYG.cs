@@ -46,6 +46,16 @@ public class AdNotificationYG : MonoBehaviour
         closeNotifCoroutine = StartCoroutine(CloseNotification());
     }
 
+    public void HideAdNotification()
+    {
+        if(!isShowNotification) return;
+        
+        notificationObj.SetActive(false);
+        isShowNotification = false;
+        ViewingAdsYG.onPause?.Invoke(true);
+        StopCoroutine(closeNotifCoroutine);
+    }
+    
     private IEnumerator CloseNotification()
     {
         yield return new WaitForSecondsRealtime(waitingForAds);

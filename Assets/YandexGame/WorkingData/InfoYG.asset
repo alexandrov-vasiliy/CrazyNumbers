@@ -27,9 +27,9 @@ MonoBehaviour:
   AdWhenLoadingScene: 1
   showFirstAd: 1
   rewardedAfterClosing: 1
-  adDisplayCalls: 0
-  fullscreenAdInterval: 40
-  durationOfAdSimulation: 0.5
+  adDisplayCalls: 1
+  fullscreenAdInterval: 61
+  durationOfAdSimulation: 1
   loadAdWithDelaySimulation: 0
   testErrorOfRewardedAdsInEditor: 0
   saveCloud: 1
@@ -40,7 +40,7 @@ MonoBehaviour:
   quitGameParameters:
     objectName: YandexGame
     methodName: _SaveProgress
-  leaderboardEnable: 1
+  leaderboardEnable: 0
   saveScoreAnonymousPlayers: 1
   leaderboardSimulation:
   - technoName: advanced

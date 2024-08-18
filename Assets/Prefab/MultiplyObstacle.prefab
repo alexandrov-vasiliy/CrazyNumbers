@@ -213,6 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e089f212124602afc98f2db751b661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _divideStep: 0
   _rb: {fileID: 1790602294899535570}
   NumberForce: 1
   spriteRenderer: {fileID: 8519501785274604556}
@@ -221,7 +222,7 @@ MonoBehaviour:
   blinkDuration: 1
   scaleMultiplier: 1.5
   blinkFadeValue: 0.7
-  finalFadeDuration: 6
+  finalFadeDuration: 2
   number: {fileID: 9129380530361166794}
 --- !u!1 &1835214109475658652
 GameObject:

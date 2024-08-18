@@ -59,8 +59,6 @@ public class ObstacleSpawner : MonoBehaviour
 
             yield return new WaitForSeconds(obstacleInfo.spawnRate + spawnRateCoef);
         }
-
-        Debug.Log("Level Complete");
     }
 
     private Vector2 CalculateSpawnPosition(LevelConfig.ObstacleInfo obstacleInfo, BaseObstacle obstacleScript)

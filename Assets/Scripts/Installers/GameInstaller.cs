@@ -3,12 +3,15 @@ using Analytics;
 using Level;
 using Localization;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 public class GameInstaller : MonoInstaller
 {
     [SerializeField] private int _dieStep;
-
+    [FormerlySerializedAs("adNotificationYg")] [SerializeField] private AdNotificationYG _adNotificationYg;
+    [SerializeField] private SkipLevelView _skipLevelView;
+    
     public override void InstallBindings()
     {
         Container.Bind<AudioManager>().FromComponentInHierarchy().AsSingle().NonLazy();
@@ -20,8 +23,10 @@ public class GameInstaller : MonoInstaller
         Container.Bind<LevelSwitcher>().FromComponentInHierarchy().AsSingle().NonLazy();
 
         Container.Bind<IAnalytics>().To<YandexMetrikaAnalytics>().FromNew().AsSingle().NonLazy();
-        Container.BindInterfacesAndSelfTo<FullScreenAdShower>().AsSingle().WithArguments(_dieStep);
+        Container.BindInterfacesAndSelfTo<FullScreenAdShower>().AsSingle();
 
+        Container.Bind<SkipLevelView>().FromInstance(_skipLevelView).AsSingle();
+        Container.BindInterfacesAndSelfTo<RewardButtonVisibility>().AsSingle().NonLazy();
         BindSaver();
         BindAd();
         BindLocalization();
@@ -41,10 +46,11 @@ public class GameInstaller : MonoInstaller
     {
         #if UNITY_WEBGL
                 Container.BindInterfacesAndSelfTo<YGAd>().AsSingle();
-        #endif
-        #if UNITY_ANDROID
+                Container.BindInterfacesAndSelfTo<AdvertEvents>().AsSingle().NonLazy();
+#endif
+#if UNITY_ANDROID
                 Container.BindInterfacesAndSelfTo<AndroidYandexAd>().AsSingle();
-        #endif
+#endif
     }
 
     private void BindLocalization()

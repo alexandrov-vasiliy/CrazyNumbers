@@ -38,7 +38,7 @@ public class AudioButton : MonoBehaviour
 
 	public void EfxButtonClicked()
 	{
-		_audioManager.MuteEfx();
+		_audioManager.ToggleEfx();
 		_audioManager.PlayEffects(_audioManager.buttonClick);
 		SetButton();
 	}

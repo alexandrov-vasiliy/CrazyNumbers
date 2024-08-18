@@ -16,7 +16,6 @@ public class FullScreenObstacle : MonoBehaviour
         Camera camera = Camera.main;
         if(camera == null)
         {
-            Debug.LogError("Main camera not found.");
             return;
         }
 

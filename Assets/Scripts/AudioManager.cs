@@ -83,12 +83,17 @@ public class AudioManager : MonoBehaviour
 		}
 	}
 
-	public void MuteEfx()
+	public void ToggleEfx()
 	{
 		PlayerPrefs.SetInt("MuteEfx", muteEfx ? 0 : 1);
 		muteEfx = !muteEfx;
 	}
 
+	public void MuteEfx()
+	{
+		muteEfx = true;
+	}
+	
 	public bool IsMusicMute()
 	{
 		return muteMusic;

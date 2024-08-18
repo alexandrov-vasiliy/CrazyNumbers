@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Adver;
 using Analytics;
 using Level;
 using Levels;
@@ -44,7 +45,8 @@ public class LevelSwitcher : MonoBehaviour
     private ILocalization _localization;
     private FullScreenAdShower _fullScreenAdShower;
 
-    public Action<int> OnCurrentLevelChange;
+    public event Action<int> OnCurrentLevelChange;
+    public event Action OnLevelUpdate;
     public int CurrentLevelIndex => _currentLevelIndex;
     public LevelConfig CurrentLevel => _levels[_currentLevelIndex];
 
@@ -232,6 +234,7 @@ public class LevelSwitcher : MonoBehaviour
     {
         StartCoroutine(DelayStartLevel());
         SetTutorialText();
+        OnLevelUpdate?.Invoke();
     }
 
     private IEnumerator DelayStartLevel()

@@ -1,3 +1,4 @@
+using System;
 using Adver;
 using Analytics;
 using UnityEngine;
@@ -11,17 +12,18 @@ public class SkipLevelView : MonoBehaviour
     [Inject] private UIManager _uiManager;
     [Inject] private IAnalytics _analytics;
     [Inject] private Player _player;
-    
+
 
     [SerializeField] private Text _skipLevelText;
     [SerializeField] private Text _respawnText;
-    
+
+    public event Action OnRewardRelease;
     public void SkipLevelClick()
     {
         _ad.ShowAd();
     }
 
-    private void RewRealise()
+    private void RewardRealise()
     {
         if (_levelSwitcher.CurrentLevel.typeLevel == LevelType.BossLevel)
         {
@@ -30,8 +32,9 @@ public class SkipLevelView : MonoBehaviour
         else
         {
             _levelSwitcher.Respawn();
+            OnRewardRelease?.Invoke();
+
         }
-        
         _analytics.WatchReward();
     }
 
@@ -67,12 +70,14 @@ public class SkipLevelView : MonoBehaviour
 
     private void OnEnable()
     {
-        _ad.OnRewarded += RewRealise;
+        _ad.OnRewarded += RewardRealise;
         EnableCorrectText();
     }
 
     private void OnDisable()
     {
-        _ad.OnRewarded -= RewRealise;
+        _ad.OnRewarded -= RewardRealise;
     }
+
+
 }

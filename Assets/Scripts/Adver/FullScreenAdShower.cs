@@ -1,50 +1,17 @@
-using System;
-using Adver;
-using Zenject;
-
-public class FullScreenAdShower : IInitializable, IDisposable
+namespace Adver
 {
-    
-    
-
-    private int _dieCount = 0;
-    private int _dieStep = 2;
-    
-    private readonly IAd _ad;
-    private readonly PlayerEvents _playerEvents;
-    
-    public FullScreenAdShower(PlayerEvents playerEvents, IAd ad, int dieStep)
+    public class FullScreenAdShower
     {
-        _dieStep = dieStep;
-        _playerEvents = playerEvents;
-        _ad = ad;
-    }
-    
-    
-    public void Initialize()
-    {
-        _playerEvents.OnPlayerDead += HandlePlayerDead;
-    }
-
-    public void Dispose()
-    {
-        _playerEvents.OnPlayerDead -= HandlePlayerDead;
-    }
-
-    private void HandlePlayerDead()
-    {
-        _dieCount++;
-    }
-
-    public void TryShowFullscreenAd()
-    {
-        if (_dieCount >= _dieStep)
+        private readonly IAd _ad;
+        public FullScreenAdShower(IAd ad)
+        {
+            _ad = ad;
+        }
+        
+        public void TryShowFullscreenAd()
         {
             _ad.ShowFullScreenAd();
-            _dieCount = 0;
         }
-
     }
-    
 }
 
